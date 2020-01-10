@@ -1,15 +1,25 @@
+// Define api main endpoint //
 const endPoint = "https://newsapi.org";
+
+// Define type subpoints //
 const topNews = "/v2/top-headlines?";
 const searchNews = "/v2/everything?";
 const sourcesFinder = "/v2/sources?";
+
+// Define parameter subpoints //
 const languageSelector = "language=";
 const keywordsSelector = "q=";
 const countrySelector = "country=";
 const categorySelector = "category=";
 const sourcesSelector = "sources=";
+
+// Define api key //
 const apiKey = "apiKey=5024963fa5464b67b100d3613c415c02";
+
+// Define default parameters //
 const defaultLanguage = "en";
 
+//! Fetch news function //
 export async function fetchNews(typeOfNews, options) {
   let submitPoint = endPoint;
 
@@ -58,6 +68,7 @@ export async function fetchNews(typeOfNews, options) {
   console.log(news);
 }
 
+//! Fetch sources function //
 export async function fetchSources() {
   const results = await fetch(`${endPoint}${sourcesFinder}${apiKey}`);
   const sources = await results.json();
