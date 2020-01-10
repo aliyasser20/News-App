@@ -1,0 +1,26 @@
+--------------------------------------- Fetch News Function ---------------------------------------
+
+fetchNews(TypeOfNews, OptionsObject);
+
+TypeOfNews = "top" or "search"
+
+OptionsObject = {
+  // Options for "top":
+    language: (default "en")
+    category: (options: "business", "entertainment", "general", "health", "science", "sports", "technology")
+    country:
+    sources: (cannot be used if category or country parameter present)
+    keywords:
+    pageSize: (default "20" --- max is "100")
+
+  // Options for "search":
+    language: (default "en")
+    sources:
+    keywords: (MUST HAVE)
+    pageSize: (default "20" --- max is "100")
+    sortBy: (default "publishedAt") (options: "relevancy", "popularity", "publishedAt")
+    from: "year-month-day" (one month old only)
+    to: "year-month-day" (one month old only)
+}
+
+---------------------------------------------------------------------------------------------------

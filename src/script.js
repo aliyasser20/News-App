@@ -1,14 +1,10 @@
-// Imports //
-import { fetchNews, fetchSources } from "./fetch_news";
+// ? Imports //
+import { fetchNews, fetchSources } from "./fetch_data";
 
-console.log("it works");
-
-//! Get news //
-// fetchNews("search", {
-//   country: "gb",
-//   sources: "al-jazeera-english",
-//   keywords: "iran"
+// ? Get news //
+// fetchNews("top", {
+//   sources: "cbc-news"
 // });
 
-//! Get sources //
+// ? Get sources //
 // fetchSources();
