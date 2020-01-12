@@ -1,0 +1,10 @@
+/* Set stroke of regions */
+#regions_div path {
+  stroke-width: 0.75px;
+  stroke: white;
+}
+
+/* Set fill when hovering on region */
+#regions_div g[clip-path] > g + g > g > path {
+  fill: #FCAE00;
+}
