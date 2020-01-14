@@ -6,15 +6,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>News App</title>
-  <link rel="stylesheet" href="./styles/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/base.scss">
+  <link rel="stylesheet" href="./styles/header.scss">
+  <link rel="stylesheet" href="./styles/map.scss">
 </head>
 
 <body>
-  <h1>Testing</h1>
-  <div id="regions_div"></div>
+  <header>
+    <div class="container">
+      <div class="upper-menu-area">
+        <div class="logo-area">
+          <button class="logo"><img src="./assets/logo.png" alt="News App Logo"></button>
+        </div>
+        <div class="search-area">
+          <form>
+            <input type="text" class="search-input no-search" placeholder="Search news ...">
+            <button class="search-button no-search">Search
+              <img src="./assets/arrow_right.png" alt="arrow right">
+            </button>
+            <button class="search unclicked"><img src="./assets/magnifier@2x.png" alt="News App Logo"></button>
+          </form>
+        </div>
+      </div>
+      <div class="menu-area">
+        <button class="selected">
+          <p>Home</p>
+        </button>
+        <button>
+          <p>World</p>
+        </button>
+        <button>
+          <p>US&nbsp & &nbspCanada</p>
+        </button>
+        <button>
+          <p>UK</p>
+        </button>
+        <button>
+          <p>Business</p>
+        </button>
+        <button>
+          <p>Health</p>
+        </button>
+        <button>
+          <p>Sports</p>
+        </button>
+        <button>
+          <p>Science</p>
+        </button>
+        <button>
+          <p>Technology</p>
+        </button>
+        <button class="last-menu-button">
+          <p>Entertainment</p>
+        </button>
+      </div>
+    </div>
+  </header>
+
 
   <script src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="./src/script.js"></script>
 </body>
 
 </html>
+
+<!-- <div id="regions_div"></div> -->

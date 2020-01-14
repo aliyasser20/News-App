@@ -1,0 +1,132 @@
+header {
+  --underline-height: 7px;
+  width: 100vw;
+  background-color: var(--blackish);
+
+  .container {
+    display: grid;
+    grid-template-rows: 100px 31px;
+    height: 100%;
+    max-width: 1256px;
+    min-width: 565px;
+    margin: auto auto;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .upper-menu-area {
+      display: grid;
+      align-items: center;
+      grid-auto-flow: column;
+      grid-template-columns: 1fr 330px;
+      
+      .logo {
+        display: grid;
+        align-items: center;
+        justify-content: left;
+      }
+
+      .logo img {
+        height: 80px;
+      }
+
+      .search-area form {
+        width: 350px;
+        float: right;
+      }
+
+      .search-input {
+        height: 30px;
+        flex-grow: 2;
+        border-radius: 6px 0 0 6px;
+        padding-left: 10px;
+        font-size: 13px;
+      }
+      
+      .search-button {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        padding-right: 5px;
+        font-size: 13px;
+        font-weight: 1000;
+      }
+      
+      .search-button img {
+        height: 15px;
+        margin-left: 4px;
+      }
+
+      .search {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        background: var(--yellowish);
+        float: right;
+      }
+
+      // Add next search-input and search button elements to close search //
+      .no-search {
+        display: none;
+      }
+
+      // Add to search-area form element to display search //
+      .yes-search {
+        display: flex;
+      }
+
+      // Add to search element to close search //
+      .unclicked {
+        border-radius: 6px;
+      }
+
+      // Add to search element to display search //
+      .clicked {
+        border-radius: 0 6px 6px 0;
+      }
+
+      .search:hover {
+        background: var(--dark-yellowish);
+      }
+
+      .search img {
+        width: 20px
+      }
+    }
+
+    .menu-area {
+      display: grid;
+      grid-auto-flow: column;
+
+      button {
+        display: grid;
+        align-items: start;
+        font-size: 16px;
+        color: white;
+        height: 31px;
+
+        p {
+          width: 100%;
+          height: max-content;
+          border-right: solid 1px white;
+          margin-top: 0px;
+        }
+      }
+
+      button:hover {
+        border-bottom: solid var(--underline-height) var(--yellowish);
+        color: var(--yellowish);
+      }
+
+      .selected {
+        border-bottom: solid var(--underline-height) var(--yellowish);
+        color: var(--yellowish);
+      }
+      .last-menu-button p {
+        border-right: none !important; 
+      }
+    }
+  }
+}
+
