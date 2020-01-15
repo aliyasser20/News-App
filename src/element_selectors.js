@@ -1,8 +1,9 @@
 // ? Select search bar elements //
-const searchAreaForm = document.querySelector(".search-area form");
-const searchInput = searchAreaForm.querySelector(".search-input");
-const searchButton = searchAreaForm.querySelector(".search-button");
-const searchIcon = searchAreaForm.querySelector(".search");
+const header = document.querySelector("header");
+const searchIcon = header.querySelector(".search-icon");
+const searchBar = document.querySelector(".search-bar-area");
+const mobileMenuIcon = header.querySelector(".mobile-menu-icon");
+const mobileMenuArea = document.querySelector(".mobile-menu-area");
 
 // ? Exports //
-export { searchAreaForm, searchInput, searchButton, searchIcon };
+export { header, searchIcon, searchBar, mobileMenuArea, mobileMenuIcon };

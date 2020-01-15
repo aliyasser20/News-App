@@ -1,13 +1,8 @@
 // ? Imports //
 import { fetchNews, fetchSources } from "./fetch_data";
 import { drawMap } from "./google_maps_api";
-import {
-  searchAreaForm,
-  searchInput,
-  searchButton,
-  searchIcon
-} from "./element_selectors";
-import { handleSearchIconClick } from "./handlers";
+import { searchIcon, mobileMenuIcon } from "./element_selectors";
+import { handleSearchIconClick, handleMobileMenuIconClick } from "./handlers";
 
 // ? Get news //
 // fetchNews("top", {
@@ -25,3 +20,6 @@ import { handleSearchIconClick } from "./handlers";
 
 // ? Add event listner for search icon click //
 searchIcon.addEventListener("click", handleSearchIconClick);
+
+// ? Add event listner for mobile menu icon //
+mobileMenuIcon.addEventListener("click", handleMobileMenuIconClick);

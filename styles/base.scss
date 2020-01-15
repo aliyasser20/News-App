@@ -1,5 +1,6 @@
 :root {
-  --blackish: #222222;
+  --blackish: rgba(0, 0, 0, 0.858);
+  --greyish: rgba(0, 0, 0, 0.6);
   --yellowish: #FCAE00;
   --dark-yellowish: #EDA400;
 }
@@ -20,7 +21,7 @@ button {
  cursor: pointer;
 }
 
-button:focus {outline:0;}
+button:focus, input:focus {outline:0;}
 
 input {
   border: none;
