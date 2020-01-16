@@ -17,8 +17,8 @@ header {
     grid-template-columns: 40px 1fr 30px;
     max-width: 1256px;
     margin: auto auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: var(--gap);
+    padding-right: var(--gap);
 
     .logo-area {
       display: flex;
@@ -139,8 +139,8 @@ header {
     margin-right: auto;
     height: 100%;
     align-items: center;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: var(--gap);
+    padding-right: var(--gap);
     
     input, button {
       height: 30px;
