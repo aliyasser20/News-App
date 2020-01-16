@@ -6,7 +6,7 @@ import { handleSearchIconClick, handleMobileMenuIconClick } from "./handlers";
 
 // ? Get news //
 // fetchNews("top", {
-//   sources: "cbc-news"
+//   sources: "bbc-news"
 // });
 
 // ? Get sources //
@@ -23,3 +23,11 @@ searchIcon.addEventListener("click", handleSearchIconClick);
 
 // ? Add event listner for mobile menu icon //
 mobileMenuIcon.addEventListener("click", handleMobileMenuIconClick);
+
+// ? Add event listner for scroll - must be present //
+window.addEventListener("scroll", () => {
+  document.documentElement.style.setProperty(
+    "--scroll-y",
+    `${window.scrollY}px`
+  );
+});

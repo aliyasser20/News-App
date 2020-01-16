@@ -9,24 +9,27 @@ import {
 export function toggleMobileMenuDisplay() {
   if (mobileMenuIcon.classList.contains("menu-clicked")) {
     mobileMenuIcon.classList.remove("menu-clicked");
-    mobileMenuArea.classList.remove("display");
-    mobileMenuArea.classList.add("hide");
+    mobileMenuArea.classList.remove("display-mobile-menu");
+    mobileMenuArea.classList.add("hide-mobile-menu");
     searchIcon.style.visibility = "";
 
     // ? Scroll stop and fix //
-    const scrollY = document.body.style.top;
+    const scrollYYY = document.body.style.top;
     document.body.style.position = "";
     document.body.style.top = "";
-    window.scrollTo(0, parseInt(scrollY || "0") * -1);
+    window.scrollTo(0, parseInt(scrollYYY || "0") * -1);
   } else {
     mobileMenuIcon.classList.add("menu-clicked");
-    mobileMenuArea.classList.remove("hide");
-    mobileMenuArea.classList.add("display");
+    mobileMenuArea.classList.remove("hide-mobile-menu");
+    mobileMenuArea.classList.add("display-mobile-menu");
     searchIcon.style.visibility = "hidden";
 
     // ? Scroll stop and fix //
     document.body.style.position = "fixed";
-    document.body.style.top = `-${window.scrollY}px`;
+    const scrollYY = document.documentElement.style.getPropertyValue(
+      "--scroll-y"
+    );
+    document.body.style.top = `-${scrollYY}`;
   }
 }
 // ! ----------------------------------------------------------------------------------------------------------------- //

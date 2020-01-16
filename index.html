@@ -6,17 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>News App</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/normalize.css">
   <link rel="stylesheet" href="./styles/base.scss">
   <link rel="stylesheet" href="./styles/header.scss">
+  <link rel="stylesheet" href="./styles/home.scss">
   <link rel="stylesheet" href="./styles/map.scss">
 </head>
 
 <body>
   <header>
     <div class="container">
-      <div class="mobile-menu-icon"></div>
+      <button class="mobile-menu-icon"></button>
       <div class="logo-area">
         <button class="logo"><img src="./assets/logo.png" alt="News App Logo"></button>
       </div>
@@ -65,7 +66,7 @@
       <button class="search-icon"></button>
     </div>
   </header>
-  <div class="search-bar-area hide">
+  <div class="search-bar-area hide-search">
     <form>
       <button class="search-bar-search">
         <div class="search-bar-icon"></div>
@@ -74,7 +75,10 @@
       <button class="search-bar-clear">&nbsp&nbspClear</button>
     </form>
   </div>
-  <div class="mobile-menu-area hide">
+
+
+
+  <div class="mobile-menu-area hide-mobile-menu">
     <button class="selected">
       <p>Home</p>
     </button>
@@ -107,6 +111,114 @@
     </button>
   </div>
 
+  <main>
+    <div class="home">
+      <div class="top-news news-section">
+        <span>
+          <h2 class="title">Top News</h2>
+        </span>
+        <div class="news">
+          <div class="first shadow white">
+            <button>
+              <h3 class="article-title">Anger in Vietnam over deadly 'land grab' clashes</h3>
+            </button>
+            <p class="article-headline">Three police officers and a villager died when a long-running land dispute
+              turned violent.</p>
+            <p class="article-date">10 hours ago</p>
+            <div class="image-container"
+              style="background-image: url(https://ichef.bbci.co.uk/news/1024/branded_news/14FAB/production/_110513958_dongtam.jpg);">
+            </div>
+          </div>
+          <div class="second">
+            <div class="second-box shadow white">
+              <button>
+                <h3 class="article-title">Anger in Vietnam over deadly 'land grab' clashes</h3>
+              </button>
+              <p class="article-headline">Three police officers and a villager died when a long-running land dispute
+                turned violent.</p>
+              <p class="article-date">10 hours ago</p>
+              <div class="image-container"
+                style="background-image: url(https://ichef.bbci.co.uk/news/1024/branded_news/14FAB/production/_110513958_dongtam.jpg);">
+              </div>
+            </div>
+            <div class="second-box shadow white">
+              <button>
+                <h3 class="article-title">Anger in Vietnam over deadly 'land grab' clashes</h3>
+              </button>
+              <p class="article-headline">Three police officers and a villager died when a long-running land dispute
+                turned violent.</p>
+              <p class="article-date">10 hours ago</p>
+              <div class="image-container"
+                style="background-image: url(https://ichef.bbci.co.uk/news/1024/branded_news/14FAB/production/_110513958_dongtam.jpg);">
+              </div>
+            </div>
+            <div class="second-box shadow white">
+              <button>
+                <h3 class="article-title">Anger in Vietnam over deadly 'land grab' clashes</h3>
+              </button>
+              <p class="article-headline">Three police officers and a villager died when a long-running land dispute
+                turned violent.</p>
+              <p class="article-date">10 hours ago</p>
+              <div class="image-container"
+                style="background-image: url(https://ichef.bbci.co.uk/news/1024/branded_news/14FAB/production/_110513958_dongtam.jpg);">
+              </div>
+            </div>
+          </div>
+          <div class="slider">
+            <button class="slider-left slider-unavailable"></button>
+            <div class="third">
+              <div class="third-box shadow white">
+                <button>
+                  <h3 class="article-title">Anger in Vietnam over deadly 'land grab' clashes</h3>
+                </button>
+                <p class="article-date">10 hours ago</p>
+                <div class="image-container"
+                  style="background-image: url(https://ichef.bbci.co.uk/news/1024/branded_news/14FAB/production/_110513958_dongtam.jpg);">
+                </div>
+              </div>
+              <div class="third-box shadow white">
+                <button>
+                  <h3 class="article-title">Anger in Vietnam over deadly 'land grab' clashes</h3>
+                </button>
+                <p class="article-date">10 hours ago</p>
+                <div class="image-container"
+                  style="background-image: url(https://ichef.bbci.co.uk/news/1024/branded_news/14FAB/production/_110513958_dongtam.jpg);">
+                </div>
+              </div>
+              <div class="third-box shadow white">
+                <button>
+                  <h3 class="article-title">Anger in Vietnam over deadly 'land grab' clashes</h3>
+                </button>
+                <p class="article-date">10 hours ago</p>
+                <div class="image-container"
+                  style="background-image: url(https://ichef.bbci.co.uk/news/1024/branded_news/14FAB/production/_110513958_dongtam.jpg);">
+                </div>
+              </div>
+              <div class="third-box shadow white">
+                <button>
+                  <h3 class="article-title">Anger in Vietnam over deadly 'land grab' clashes</h3>
+                </button>
+                <p class="article-date">10 hours ago</p>
+                <div class="image-container"
+                  style="background-image: url(https://ichef.bbci.co.uk/news/1024/branded_news/14FAB/production/_110513958_dongtam.jpg);">
+                </div>
+              </div>
+            </div>
+            <button class="slider-right slider-available shadow"></button>
+          </div>
+        </div>
+        <div class="local-news">
+          <span>
+            <h2 class="following-title">Local News</h2>
+          </span>
+        </div>
+        <div class="categories">
+          <span>
+            <h2 class="title">Categories</h2>
+          </span>
+        </div>
+      </div>
+  </main>
 
 
   <script src="https://www.gstatic.com/charts/loader.js"></script>

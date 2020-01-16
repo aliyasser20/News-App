@@ -3,10 +3,12 @@ header {
   top: 0;
   left: 0;
   --underline-height: 7px;
+
   width: 100vw;
   background-color: var(--blackish);
+  backdrop-filter: blur(var(--blur));
   height: 75px;
-  z-index: 1;
+  z-index: 2;
 
   .container {
     display: grid;
@@ -62,68 +64,71 @@ header {
   }
 
   @media only screen and (min-width: 1000px) { 
-      .container {
-        grid-template-columns: 40px 1fr 30px;
-  
-        .mobile-menu-icon {
-          display: none;
-        }
-  
-        .logo-area {
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
-        }
+    .container {
+      grid-template-columns: 40px 1fr 30px;
 
-        .menu-area {
-          display: grid;
-          grid-auto-flow: column;
+      .mobile-menu-icon {
+        display: none;
+      }
+
+      .logo-area {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .menu-area {
+        display: grid;
+        grid-auto-flow: column;
+        align-items: stretch;
+        padding-left: 10px;
+        padding-right: 10px;
+        
+        .last-menu-button p {
+          border-right: none !important; 
+        }
+  
+        button {
+          display: flex;
+          flex-direction: column;
           align-items: stretch;
-          padding-left: 10px;
-          padding-right: 10px;
-          
-          .last-menu-button p {
-            border-right: none !important; 
+          justify-content: flex-end;
+          font-size: 16px;
+          color: white;
+  
+          p {
+            width: 100%;
+            height: max-content;
+            border-right: solid 1px white;
+            align-self: end;
           }
-    
-          button {
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            justify-content: flex-end;
-            font-size: 16px;
-            color: white;
-    
-            p {
-              width: 100%;
-              height: max-content;
-              border-right: solid 1px white;
-              align-self: end;
-            }
-    
-            span {
-              width: 100%;
-              height: var(--underline-height);
-              margin-top: 5px;
-            }
+  
+          span {
+            width: 100%;
+            height: var(--underline-height);
+            margin-top: 5px;
           }
-    
-          button:hover, .selected {
-            color: var(--yellowish);
-    
-            span {
-              background-color: var(--yellowish);
-            }
+        }
+  
+        button:hover, .selected {
+          color: var(--yellowish);
+  
+          span {
+            background-color: var(--yellowish);
           }
         }
       }
     }
+  }
 }
 
 .search-bar-area {
+  position: fixed;
   width: 100vw;
   height: 50px;
   background-color: var(--greyish);
+  backdrop-filter: blur(var(--blur));
+  z-index: 1;
 
   form {
     display: grid;
@@ -179,11 +184,15 @@ header {
 }
 
 .mobile-menu-area {
-  display: grid;
+  position: fixed;
+  top: 125px;
   background-color: var(--blackish);
+  backdrop-filter: blur(var(--blur));
   color: white;
   transform: translateY(-50px);
   height: calc(100vh - 75px);
+  width: 100vw;
+  z-index: 1;
 
   button {
     border-top: solid 0.5px rgba(255, 255, 255, 0.2);
@@ -194,13 +203,27 @@ header {
   }
 }
 
-.hide {
+.hide-search {
   transform: translateY(-50px);
   opacity: 0;
   transition: all 0.3s;
 }
 
-.display {
+.display-search {
+  grid-template-columns: auto;
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+.hide-mobile-menu {
+  display: none;
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.display-mobile-menu {
+  display: grid;
   grid-template-columns: auto;
   opacity: 1;
   transition: all 0.3s;

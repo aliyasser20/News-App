@@ -5,13 +5,13 @@ import { searchBar, searchIcon, mobileMenuIcon } from "./element_selectors";
 export function toggleSearchDisplay() {
   if (searchIcon.classList.contains("clicked")) {
     searchIcon.classList.remove("clicked");
-    searchBar.classList.remove("display");
-    searchBar.classList.add("hide");
+    searchBar.classList.remove("display-search");
+    searchBar.classList.add("hide-search");
     mobileMenuIcon.style.visibility = "";
   } else {
     searchIcon.classList.add("clicked");
-    searchBar.classList.remove("hide");
-    searchBar.classList.add("display");
+    searchBar.classList.remove("hide-search");
+    searchBar.classList.add("display-search");
     mobileMenuIcon.style.visibility = "hidden";
   }
 }
