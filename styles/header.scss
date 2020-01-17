@@ -7,6 +7,7 @@ header {
   width: 100vw;
   background-color: var(--blackish);
   backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
   height: 75px;
   z-index: 2;
 
@@ -128,6 +129,7 @@ header {
   height: 50px;
   background-color: var(--greyish);
   backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
   z-index: 1;
 
   form {
@@ -188,6 +190,7 @@ header {
   top: 125px;
   background-color: var(--blackish);
   backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
   color: white;
   transform: translateY(-50px);
   height: calc(100vh - 75px);
