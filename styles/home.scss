@@ -117,12 +117,10 @@
     }
   }
 
-
-
   .news {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 470px 270px;
+    grid-template-rows: 320px 230px 230px;
     grid-gap: var(--gap);
 
     p {
@@ -131,6 +129,7 @@
     }
 
     .first {
+      grid-column: span 2;
       overflow: hidden;
       display: grid;
       grid-template-areas: 
@@ -139,7 +138,7 @@
       "headline"
       "date"
       ;
-      grid-template-rows: 1fr auto auto auto;
+      grid-template-rows: 65% 20% 1fr;
       border-radius: 3px;
 
       h3, p {
@@ -148,8 +147,8 @@
       }
 
       .article-title {
-        font-size: 1.75rem;
-        line-height: 2rem;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
         font-weight: 600;
       }
 
@@ -159,13 +158,12 @@
       }
 
       .article-headline {
-        line-height: 1.125rem;
-        font-size: 0.875rem;
+        display: none;
       }
 
       .article-date {
-        line-height: 1rem;
-        font-size: 0.875rem;
+        line-height: 0.9rem;
+        font-size: 0.75rem;
         padding-bottom: calc(var(--gap)/1);
       }
 
@@ -181,6 +179,7 @@
     }
 
     .second {
+      grid-column: span 2;
       display: grid;
       grid-gap: var(--gap);
       grid-auto-rows: 1fr;
@@ -188,10 +187,9 @@
       .second-box {
         overflow: hidden;
         display: grid;
-        grid-template-columns: 47.5% 1fr;
+        grid-template-columns: 60% 1fr;
         grid-template-areas: 
         "title image"
-        "headline image"
         "date image"
         ;
         border-radius: 3px;
@@ -204,8 +202,8 @@
         }
   
         .article-title {
-          font-size: 1.2rem;
-          line-height: 1.25rem;
+          font-size: 0.9rem;
+          line-height: 1rem;
           font-weight: 600;
         }
   
@@ -215,13 +213,12 @@
         }
   
         .article-headline {
-          line-height: 1.125rem;
-          font-size: 0.875rem;
+          display: none;
         }
   
         .article-date {
-          line-height: 1rem;
-          font-size: 0.875rem;
+          line-height: 0.9rem;
+          font-size: 0.75rem;
         }
   
         .image-container {
@@ -317,8 +314,8 @@
               }
         
               .article-title {
-                font-size: 1.2rem;
-                line-height: 1.25rem;
+                font-size: 0.9rem;
+                line-height: 1rem;
                 font-weight: 600;
               }
         
@@ -328,8 +325,8 @@
               }
         
               .article-date {
-                line-height: 1rem;
-                font-size: 0.875rem;
+                line-height: 0.9rem;
+                font-size: 0.75rem;
                 padding-bottom: calc(var(--gap)/1.5);
               }
         
@@ -367,3 +364,177 @@
   }
 }
 
+@media only screen and (min-width: 550px) {
+  .home {
+    .news {
+      grid-template-rows: 450px 390px 270px;
+
+
+      .first {
+        grid-column: span 2;
+        grid-template-rows: 1fr auto auto auto;
+
+
+        .article-title {
+          font-size: 1.75rem;
+          line-height: 2rem;
+          font-weight: 600;
+        }
+
+        .article-headline {
+          display: block;
+          line-height: 1.125rem;
+          font-size: 0.875rem;
+        }
+        
+        .article-date {
+          line-height: 1rem;
+          font-size: 0.875rem;
+          padding-bottom: calc(var(--gap)/1);
+        }
+      }
+      
+      .second {
+        grid-column: span 2;
+
+        .second-box {
+          grid-template-areas: 
+          "title image"
+          "headline image"
+          "date image"
+          ;
+          grid-template-columns: 55% 1fr;
+
+          .article-title {
+            font-size: 1.2rem;
+            line-height: 1.25rem;
+            font-weight: 600;
+          }
+
+          .article-headline {
+            display: block;
+            line-height: 1.125rem;
+            font-size: 0.875rem;
+          }
+
+          .article-date {
+            line-height: 1rem;
+            font-size: 0.875rem;
+          }
+        }
+      }
+
+      .slider {
+        .slides {
+  
+          .slide {
+  
+            .third {
+              
+              .third-box {
+                .article-title {
+                  font-size: 1.2rem;
+                  line-height: 1.25rem;
+                  font-weight: 600;
+                }
+
+                .article-date {
+                  line-height: 1rem;
+                  font-size: 0.875rem;
+                  padding-bottom: calc(var(--gap)/1.5);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 950px) {
+  .home {
+    .news {
+      grid-template-rows: 470px 270px;
+
+      .first {
+        grid-column: span 1;
+        grid-template-rows: 1fr auto auto auto;
+
+
+        .article-title {
+          font-size: 1.75rem;
+          line-height: 2rem;
+          font-weight: 600;
+        }
+
+        .article-headline {
+          display: block;
+          line-height: 1.125rem;
+          font-size: 0.875rem;
+        }
+        
+        .article-date {
+          line-height: 1rem;
+          font-size: 0.875rem;
+          padding-bottom: calc(var(--gap)/1);
+        }
+      }
+      
+      .second {
+        grid-column: span 1;
+
+        .second-box {
+          grid-template-areas: 
+          "title image"
+          "headline image"
+          "date image"
+          ;
+          grid-template-columns: 47.5% 1fr;
+
+          .article-title {
+            font-size: 1.2rem;
+            line-height: 1.25rem;
+            font-weight: 600;
+          }
+
+          .article-headline {
+            display: block;
+            line-height: 1.125rem;
+            font-size: 0.875rem;
+          }
+
+          .article-date {
+            line-height: 1rem;
+            font-size: 0.875rem;
+          }
+        }
+      }
+
+      .slider {
+        .slides {
+  
+          .slide {
+  
+            .third {
+              
+              .third-box {
+                .article-title {
+                  font-size: 1.2rem;
+                  line-height: 1.25rem;
+                  font-weight: 600;
+                }
+
+                .article-date {
+                  line-height: 1rem;
+                  font-size: 0.875rem;
+                  padding-bottom: calc(var(--gap)/1.5);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
