@@ -1,10 +1,4 @@
 // ? Imports //
-import { createTopNewsElement } from "./top_news";
-import { fetchNews, fetchSources } from "./fetch_data";
-import {
-  addNewsToLocalStorage,
-  addSourceOptionsToLocalStorage
-} from "./local_storage";
 import { drawMap } from "./google_maps_api";
 import {
   searchIcon,
@@ -18,15 +12,8 @@ import {
   handleLogoHomeButtonClick,
   handleMenuButtonClick
 } from "./handlers";
-// import { createMainElement } from "./main";
-
-// ? Get news //
-// fetchNews("top", {
-//   sources: "abc-news-au"
-// });
-
-// ? Get sources //
-// fetchSources();
+import { homePageReload } from "./page_reload";
+// ? End of Imports //
 
 // ? Draw map //
 // drawMap();
@@ -56,32 +43,8 @@ menuButtons.forEach(button =>
   button.addEventListener("click", handleMenuButtonClick)
 );
 
-// const x = window.matchMedia("(max-width: 800px)");
+// ? Run on page load //
+const currentSourceId =
+  JSON.parse(localStorage.getItem("currentSourceId")) || "bbc-news";
 
-// function handleWidthChange(width) {
-//   if (width.matches) {
-//     console.log("yes");
-//   } else {
-//     console.log("no");
-//   }
-// }
-
-// handleWidthChange(x);
-
-// x.addListener(handleWidthChange);
-
-// ? Dump home page content html into body //
-// document.body.appendChild(createMainElement("home"));
-
-// const sourcesButton = mainElement.querySelector(".sources");
-// sourcesButton.addEventListener("click", () => console.log("clickedd"));
-
-// TODO
-// addNewsToLocalStorage(
-//   fetchNews("top", { sources: "bbc-news" }),
-//   "top--BBC News"
-// );
-
-// addSourceOptionsToLocalStorage(fetchSources());
-
-// createTopNewsElement("BBC News");
+homePageReload({ topSource: currentSourceId });
