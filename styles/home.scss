@@ -116,7 +116,7 @@
   .news {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 410px 300px 230px;
+    grid-template-rows: 410px 300px 250px;
     grid-gap: var(--gap);
 
     p {
@@ -293,14 +293,14 @@
             .third-box {
               overflow: hidden;
               display: grid;
-              grid-template-rows: 1fr auto auto;
+              grid-template-rows: 53% 36% 1fr;
               grid-template-areas: 
               "image"
               "title"
               "date"
               ;
               border-radius: 3px;
-              grid-gap: calc(var(--gap)/1.5);
+              // grid-gap: calc(var(--gap)/2);
       
               h3, p {
                 padding-left: calc(var(--gap)/1.5);
@@ -312,6 +312,10 @@
                 font-size: 0.9rem;
                 line-height: 1rem;
                 font-weight: 600;
+                overflow: hidden;
+                // text-align: start;
+                // align-self: start;
+                // height: 100%;
               }
         
               .article-title:hover {
@@ -362,7 +366,7 @@
 @media only screen and (min-width: 550px) {
   .home {
     .news {
-      grid-template-rows: 450px 450px 270px;
+      grid-template-rows: 450px 450px 350px;
 
 
       .first {
@@ -455,7 +459,7 @@
 @media only screen and (min-width: 950px) {
   .home {
     .news {
-      grid-template-rows: 570px 270px;
+      grid-template-rows: 570px 350px;
 
       .first {
         grid-column: span 1;
@@ -526,8 +530,8 @@
               
               .third-box {
                 .article-title {
-                  font-size: 1.2rem;
-                  line-height: 1.25rem;
+                  font-size: 1.1rem;
+                  line-height: 1.15rem;
                   font-weight: 600;
                 }
 

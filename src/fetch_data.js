@@ -74,7 +74,7 @@ export async function fetchNews(typeOfNews, options) {
   const results = await fetch(submitPoint);
   const news = await results.json();
 
-  // console.log(news);
+  console.log(news);
   return news;
 }
 // ! --------------------------------------------------------------------------------------------------------------------------- //

@@ -1,80 +1,162 @@
 import { homePageReload } from "./page_reload";
+import { ageCalc, maxCharactersApply, imageAvailability } from "./utility";
 
-export function handleWidthChange() {
+export async function handleWidthChange() {
   const width = window.innerWidth || document.body.clientWidth;
 
-  const slidesElements = document.querySelectorAll(".slide");
-  const thirdboxes = document.querySelectorAll(".third-box");
+  let thirdboxes;
+  const third = document.querySelector(".third");
+
+  if (third) {
+    thirdboxes = third.querySelectorAll(".third-box");
+  } else {
+    thirdboxes = [];
+  }
+
+  const currentSourceId =
+    (await JSON.parse(localStorage.getItem("currentSourceId"))) || "bbc-news";
 
   if (width > 950 && thirdboxes.length === 0) {
     console.log("changed");
     return slidesCreator(4);
   }
 
-  if (width <= 950 && thirdboxes.length === 0) {
+  if (width <= 950 && width > 550 && thirdboxes.length === 0) {
     console.log("changed");
     return slidesCreator(2);
   }
 
-  if (width > 950 && thirdboxes.length === 10) {
-    slidesElements.forEach(element => element.remove());
-    console.log("worked");
+  if (width < 550 && thirdboxes.length === 0) {
+    console.log("changed");
+    return slidesCreator(1);
+  }
 
-    const currentSourceId =
-      JSON.parse(localStorage.getItem("currentSourceId")) || "bbc-news";
-
+  if (width > 950 && thirdboxes.length !== 4) {
     homePageReload({ topSource: currentSourceId });
   }
 
-  if (width <= 950 && thirdboxes.length === 20) {
-    slidesElements.forEach(element => element.remove());
-    console.log("worked");
+  if (width <= 950 && width > 550 && thirdboxes.length !== 2) {
+    homePageReload({ topSource: currentSourceId });
+  }
 
-    const currentSourceId =
-      JSON.parse(localStorage.getItem("currentSourceId")) || "bbc-news";
-
+  if (width < 550 && thirdboxes.length !== 1) {
     homePageReload({ topSource: currentSourceId });
   }
 }
 
-function singleSlideCreator(numberOfNewsPerSlide) {
+async function singleSlideCreator(numberOfNewsPerSlide, slideNumber) {
+  const currentSource =
+    (await JSON.parse(localStorage.getItem("currentSourceId"))) || "bbc-news";
+
+  const topNewsIdentifier = `top--${currentSource}`;
+  const searchTopNewsIdentifier = `searchTop--${currentSource}`;
+
+  const topNewsArray = await JSON.parse(
+    localStorage.getItem(topNewsIdentifier)
+  );
+
+  const searchTopNewsArray = await JSON.parse(
+    localStorage.getItem(searchTopNewsIdentifier)
+  );
+
   let singleSlideHTML = "";
 
+  // if (slideNumber === 0) {
+  //   for (let i = 0; i < numberOfNewsPerSlide; i++) {
+  //     singleSlideHTML += `
+  //     <div class="third-box shadow white">
+  //       <button>
+  //         <h3 class="article-title">${maxCharactersApply(
+  //           topNewsArray[i + 3].title,
+  //           100
+  //         )}</h3>
+  //       </button>
+  //       <p class="article-date">${ageCalc(
+  //         topNewsArray[i + 3].publishedAt
+  //       )}</p>
+  //       <div class="image-container"
+  //         style="background-image: url(${imageAvailability(
+  //           topNewsArray[i + 3].urlToImage
+  //         )});">
+  //       </div>
+  //     </div>
+  //     `;
+  //   }
+  // } else {
+  //   for (let i = 0; i < numberOfNewsPerSlide; i++) {
+  //     singleSlideHTML += `
+  //     <div class="third-box shadow white">
+  //       <button>
+  //         <h3 class="article-title">${maxCharactersApply(
+  //           searchTopNewsArray[i + slideNumber * numberOfNewsPerSlide - 1]
+  //             .title,
+  //           100
+  //         )}</h3>
+  //       </button>
+  //       <p class="article-date">${ageCalc(
+  //         searchTopNewsArray[i + slideNumber * numberOfNewsPerSlide - 1]
+  //           .publishedAt
+  //       )}</p>
+  //       <div class="image-container"
+  //         style="background-image: url(${imageAvailability(
+  //           searchTopNewsArray[i + slideNumber * numberOfNewsPerSlide - 1]
+  //             .urlToImage
+  //         )});">
+  //       </div>
+  //     </div>
+  //     `;
+  //   }
+  // }
   for (let i = 0; i < numberOfNewsPerSlide; i++) {
     singleSlideHTML += `
-    <div class="third-box shadow white">
-      <button>
-        <h3 class="article-title">Anger in Vietnam over deadly 'land grab' clashes</h3>
-      </button>
-      <p class="article-date">10 hours ago</p>
-      <div class="image-container"
-        style="background-image: url(https://ichef.bbci.co.uk/news/1024/branded_news/14FAB/production/_110513958_dongtam.jpg);">
+      <div class="third-box shadow white">
+        <button>
+          <h3 class="article-title">${maxCharactersApply(
+            searchTopNewsArray[i + slideNumber * numberOfNewsPerSlide].title,
+            70
+          )}</h3>
+        </button>
+        <p class="article-date">${ageCalc(
+          searchTopNewsArray[i + slideNumber * numberOfNewsPerSlide].publishedAt
+        )}</p>
+        <div class="image-container"
+          style="background-image: url(${imageAvailability(
+            searchTopNewsArray[i + slideNumber * numberOfNewsPerSlide]
+              .urlToImage
+          )});">
+        </div>
       </div>
-    </div>
-    `;
+      `;
   }
+
   return singleSlideHTML;
 }
 
-export function slidesCreator(numberOfNewsPerSlide) {
+export async function slidesCreator(numberOfNewsPerSlide) {
   window.addEventListener("resize", handleWidthChange);
 
   let slidesHTML = "";
 
-  for (let numberOfSlides = 0; numberOfSlides < 5; numberOfSlides++) {
+  let slideNumber;
+
+  if (numberOfNewsPerSlide === 1) slideNumber = 20;
+  if (numberOfNewsPerSlide === 2) slideNumber = 10;
+  if (numberOfNewsPerSlide === 4) slideNumber = 5;
+
+  for (let i = 0; i < slideNumber; i++) {
     let currentOrNext = "";
 
-    if (numberOfSlides === 0) {
+    if (i === 0) {
       currentOrNext = "current";
     }
-    if (numberOfSlides === 1) {
+    if (i === 1) {
       currentOrNext = "next";
     }
 
     slidesHTML += `
     <div class="slide ${currentOrNext}">
     <div class="third">
-    ${singleSlideCreator(numberOfNewsPerSlide)}
+    ${await singleSlideCreator(numberOfNewsPerSlide, i)}
     </div>
     </div>
     `;

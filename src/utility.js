@@ -35,7 +35,7 @@ export function ageCalc(date) {
     }
     return `${ageInHours} hours ago`;
   }
-  if (ageInDays < 30) {
+  if (ageInDays < 31) {
     if (ageInDays === 1) {
       return `${ageInDays} day ago`;
     }
@@ -52,4 +52,11 @@ export function maxCharactersApply(string, MAXCHARACTERS) {
     return `${string.slice(0, MAXCHARACTERS)}...`;
   }
   return string;
+}
+
+export function imageAvailability(imageURL) {
+  if (imageURL === "null" || imageURL === null || imageURL === "") {
+    return "https://gfsstore.com/wp-content/uploads/2018/09/No_Image_Available.png";
+  }
+  return imageURL;
 }
