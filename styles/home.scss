@@ -67,8 +67,8 @@
     .source-menu-shown {
       position: fixed;
       width: 400px;
-      height: 50vh;
-      top: 25vh;
+      height: 70vh;
+      top: 15vh;
       left: calc(50vw - 200px);
       margin-left: auto;
       margin-right: auto;
@@ -89,7 +89,8 @@
         display: grid;
         grid-auto-rows: 50px;
         overflow: auto;
-        
+        scroll-behavior: smooth;
+
         .source-option {
           background-color: var(--blackish-no-transp);
           width: 100%;
@@ -142,8 +143,8 @@
       }
 
       .article-title {
-        font-size: 1.25rem;
-        line-height: 1.5rem;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
         font-weight: 600;
       }
 

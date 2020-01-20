@@ -197,6 +197,7 @@ header {
   width: 100vw;
   z-index: 1;
   overflow: auto;
+  scroll-behavior: smooth;
 
   button {
     border-top: solid 0.5px rgba(255, 255, 255, 0.2);

@@ -7,7 +7,7 @@ import { handleWidthChange } from "./slides";
 export async function createTopNewsElement(currentSource) {
   // ? Retrieve from local storage //
   const sourceOptionsArray = await JSON.parse(
-    localStorage.getItem("sourceOptionsArray")
+    sessionStorage.getItem("sourceOptionsArray")
   );
 
   let currentSourceName = "";
@@ -28,7 +28,7 @@ export async function createTopNewsElement(currentSource) {
   });
 
   const identifier = `top--${currentSource}`;
-  const topNewsArray = await JSON.parse(localStorage.getItem(identifier));
+  const topNewsArray = await JSON.parse(sessionStorage.getItem(identifier));
 
   const topNewsElement = document.createElement("div");
   topNewsElement.classList.add("top-news");
@@ -146,7 +146,7 @@ export async function createTopNewsElement(currentSource) {
       }
     });
 
-    localStorage.setItem(
+    sessionStorage.setItem(
       "currentSourceId",
       JSON.stringify(currentSourceIdSelected)
     );

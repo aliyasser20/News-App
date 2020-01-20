@@ -45,7 +45,7 @@ menuButtons.forEach(button =>
 
 // ? Run on page load //
 const currentSourceId =
-  JSON.parse(localStorage.getItem("currentSourceId")) || "bbc-news";
+  JSON.parse(sessionStorage.getItem("currentSourceId")) || "bbc-news";
 
 homePageReload({ topSource: currentSourceId });
 
@@ -54,3 +54,31 @@ window.addEventListener("resize", () => {
   const vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
 });
+
+// ? Disable hover states on mobile //
+function hasTouch() {
+  return (
+    "ontouchstart" in document.documentElement ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0
+  );
+}
+
+if (hasTouch()) {
+  // remove all the :hover stylesheets
+  try {
+    // prevent exception on browsers not supporting DOM styleSheets properly
+    for (const si in document.styleSheets) {
+      const styleSheet = document.styleSheets[si];
+      if (!styleSheet.rules) continue;
+
+      for (let ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+        if (!styleSheet.rules[ri].selectorText) continue;
+
+        if (styleSheet.rules[ri].selectorText.match(":hover")) {
+          styleSheet.deleteRule(ri);
+        }
+      }
+    }
+  } catch (ex) {}
+}

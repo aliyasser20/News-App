@@ -55,7 +55,7 @@ export function maxCharactersApply(string, MAXCHARACTERS) {
 }
 
 export function imageAvailability(imageURL) {
-  if (imageURL === "null" || imageURL === null || imageURL === "") {
+  if (imageURL === null || imageURL.length < 10 || imageURL === undefined) {
     return "https://gfsstore.com/wp-content/uploads/2018/09/No_Image_Available.png";
   }
   return imageURL;

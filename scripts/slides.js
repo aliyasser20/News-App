@@ -14,7 +14,7 @@ export async function handleWidthChange() {
   }
 
   const currentSourceId =
-    (await JSON.parse(localStorage.getItem("currentSourceId"))) || "bbc-news";
+    (await JSON.parse(sessionStorage.getItem("currentSourceId"))) || "bbc-news";
 
   if (width > 950 && thirdboxes.length === 0) {
     console.log("changed");
@@ -46,17 +46,17 @@ export async function handleWidthChange() {
 
 async function singleSlideCreator(numberOfNewsPerSlide, slideNumber) {
   const currentSource =
-    (await JSON.parse(localStorage.getItem("currentSourceId"))) || "bbc-news";
+    (await JSON.parse(sessionStorage.getItem("currentSourceId"))) || "bbc-news";
 
   const topNewsIdentifier = `top--${currentSource}`;
   const searchTopNewsIdentifier = `searchTop--${currentSource}`;
 
   const topNewsArray = await JSON.parse(
-    localStorage.getItem(topNewsIdentifier)
+    sessionStorage.getItem(topNewsIdentifier)
   );
 
   const searchTopNewsArray = await JSON.parse(
-    localStorage.getItem(searchTopNewsIdentifier)
+    sessionStorage.getItem(searchTopNewsIdentifier)
   );
 
   let singleSlideHTML = "";
