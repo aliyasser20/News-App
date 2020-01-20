@@ -193,9 +193,10 @@ header {
   -webkit-backdrop-filter: blur(var(--blur));
   color: white;
   transform: translateY(-50px);
-  height: calc(100vh - 75px);
+  height: calc(var(--vh, 1vh) * 100 - 75px);
   width: 100vw;
   z-index: 1;
+  overflow: auto;
 
   button {
     border-top: solid 0.5px rgba(255, 255, 255, 0.2);

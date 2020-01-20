@@ -197,8 +197,8 @@
         }
   
         .article-title {
-          font-size: 0.9rem;
-          line-height: 1rem;
+          font-size: 1.1rem;
+          line-height: 1.2rem;
           font-weight: 600;
         }
   
@@ -300,7 +300,6 @@
               "date"
               ;
               border-radius: 3px;
-              // grid-gap: calc(var(--gap)/2);
       
               h3, p {
                 padding-left: calc(var(--gap)/1.5);
@@ -313,9 +312,6 @@
                 line-height: 1rem;
                 font-weight: 600;
                 overflow: hidden;
-                // text-align: start;
-                // align-self: start;
-                // height: 100%;
               }
         
               .article-title:hover {

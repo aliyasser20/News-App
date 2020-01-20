@@ -48,3 +48,9 @@ const currentSourceId =
   JSON.parse(localStorage.getItem("currentSourceId")) || "bbc-news";
 
 homePageReload({ topSource: currentSourceId });
+
+// ? Reconfigure vh for mobile //
+window.addEventListener("resize", () => {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+});
