@@ -21,7 +21,42 @@ export async function createTopNewsElement(currentSource) {
   // ? transform source options array into button strings //
   let sourceOptionsString = "";
   sourceOptionsArray.forEach(sourceOption => {
-    if (sourceOption.language === "en") {
+    if (
+      sourceOption.language === "en" &&
+      sourceOption.id !== "australian-financial-review" &&
+      sourceOption.id !== "bloomberg" &&
+      sourceOption.id !== "crypto-coins-news" &&
+      sourceOption.id !== "football-italia" &&
+      sourceOption.id !== "four-four-two" &&
+      sourceOption.id !== "fox-sports" &&
+      sourceOption.id !== "google-news" &&
+      sourceOption.id !== "google-news-ar" &&
+      sourceOption.id !== "google-news-au" &&
+      sourceOption.id !== "google-news-br" &&
+      sourceOption.id !== "google-news-ca" &&
+      sourceOption.id !== "google-news-fr" &&
+      sourceOption.id !== "google-news-in" &&
+      sourceOption.id !== "google-news-is" &&
+      sourceOption.id !== "google-news-it" &&
+      sourceOption.id !== "google-news-ru" &&
+      sourceOption.id !== "google-news-sa" &&
+      sourceOption.id !== "google-news-uk" &&
+      sourceOption.id !== "hacker-news" &&
+      sourceOption.id !== "mtv-news-uk" &&
+      sourceOption.id !== "news-com-au" &&
+      sourceOption.id !== "newsweek" &&
+      sourceOption.id !== "next-big-future" &&
+      sourceOption.id !== "recode" &&
+      sourceOption.id !== "reddit-r-all" &&
+      sourceOption.id !== "talksport" &&
+      sourceOption.id !== "the-american-conservative" &&
+      sourceOption.id !== "the-globe-and-mail" &&
+      sourceOption.id !== "the-hindu" &&
+      sourceOption.id !== "the-huffington-post" &&
+      sourceOption.id !== "the-jerusalem-post" &&
+      sourceOption.id !== "the-lad-bible" &&
+      sourceOption.id !== "the-sport-bible"
+    ) {
       sourceOptionsString += `<button class="source-option">${sourceOption.name}</button>
       `;
     }

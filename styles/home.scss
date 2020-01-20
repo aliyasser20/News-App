@@ -67,7 +67,7 @@
     .source-menu-shown {
       position: fixed;
       width: 400px;
-      height: 70vh;
+      height: calc(var(--vh, 1vh) * 70);
       top: 15vh;
       left: calc(50vw - 200px);
       margin-left: auto;
@@ -198,8 +198,8 @@
         }
   
         .article-title {
-          font-size: 1.1rem;
-          line-height: 1.2rem;
+          font-size: 1rem;
+          line-height: 1.1rem;
           font-weight: 600;
         }
   
