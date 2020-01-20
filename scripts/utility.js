@@ -18,10 +18,10 @@ export function ageCalc(date) {
 
   const comparedDate = new Date(Date.UTC(year, month, day, hour, minute, 0));
 
-  const ageInMins = differenceInMinutes(currentDate, comparedDate);
-  const ageInHours = differenceInHours(currentDate, comparedDate);
-  const ageInDays = differenceInDays(currentDate, comparedDate);
-  const ageInMonths = differenceInMonths(currentDate, comparedDate);
+  const ageInMins = Math.abs(differenceInMinutes(currentDate, comparedDate));
+  const ageInHours = Math.abs(differenceInHours(currentDate, comparedDate));
+  const ageInDays = Math.abs(differenceInDays(currentDate, comparedDate));
+  const ageInMonths = Math.abs(differenceInMonths(currentDate, comparedDate));
 
   if (ageInMins < 60) {
     if (ageInMins === 1) {
