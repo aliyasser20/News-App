@@ -4,7 +4,7 @@ header {
   left: 0;
   --underline-height: 7px;
 
-  width: 100vw;
+  width: 100%;
   background-color: var(--blackish);
   backdrop-filter: blur(var(--blur));
   -webkit-backdrop-filter: blur(var(--blur));
@@ -125,7 +125,7 @@ header {
 
 .search-bar-area {
   position: fixed;
-  width: 100vw;
+  width: 100%;
   height: 60px;
   background-color: var(--greyish);
   backdrop-filter: blur(var(--blur));
@@ -194,8 +194,9 @@ header {
   -webkit-backdrop-filter: blur(var(--blur));
   color: white;
   transform: translateY(-50px);
-  height: calc(var(--vh, 1vh) * 100 - 75px);
-  width: 100vw;
+  height: calc(100% - 75px);
+  // height: calc(var(--vh, 1vh) * 100 - 75px);
+  width: 100%;
   z-index: 1;
   overflow: auto;
   scroll-behavior: smooth;

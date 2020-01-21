@@ -51,7 +51,7 @@
 
     .modal-outer {
       position: fixed;
-      width: 100vw;
+      width: 100%;
       height: 100%;
       top: 0px;
       left: 0px;
@@ -68,9 +68,10 @@
     .source-menu-shown {
       position: fixed;
       width: 400px;
-      height: calc(var(--vh, 1vh) * 70);
+      // height: calc(var(--vh, 1vh) * 70);
+      height: calc(70%);
       top: 15vh;
-      left: calc(50vw - 200px);
+      left: calc(50% - 200px);
       margin-left: auto;
       margin-right: auto;
       background-color: white;
