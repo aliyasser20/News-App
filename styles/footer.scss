@@ -1,0 +1,224 @@
+footer {
+  width: 100%;
+
+  .container {
+    max-width: 1256px;
+    margin: auto auto;
+    height: 100%;
+    padding-left: var(--gap);
+    padding-right: var(--gap);
+  }
+
+  .actual-footer-area {
+    height: 505px;
+    width: 100%;
+    background-color: rgb(9, 9, 9);
+
+    .container {
+      padding-top: 1rem;
+      display: grid;
+      grid-template-rows: 310px 110px 60px;
+      align-items: center;
+
+      .footer-links-area {
+        display: grid;
+        grid-gap: 1rem;
+        justify-items: center;
+
+        .links-category {
+          display: grid;
+          grid-template-rows: 30px 1fr;
+          justify-items: start;
+          width: max-content;
+
+          .category-link {
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+          }
+
+          .category-link:hover {
+            color: var(--yellowish);
+          }
+
+          .category-link-area {
+            display: none;
+            grid-auto-rows: 25px;
+            padding-top: 0.7rem;
+            
+            .following-link {
+              text-align: left;
+              font-size: 13px;
+              color: white;
+            }
+
+            .following-link:hover {
+              color: var(--yellowish);
+            }
+          }
+        }
+      }
+
+      .footer-logo-area {
+        display: grid;
+        border-bottom: 1px solid rgb(91, 91, 91);
+        padding-top: 10px;
+
+        .full-logo {
+          display: grid;
+          grid-auto-flow: column;
+          grid-auto-columns: max-content;
+          justify-self: center;
+          align-self: end;
+
+          img {
+            height: 45px;
+            align-self: center;
+          }
+
+          .logo-name {
+            color: white;
+            font-size: 1.3rem;
+            line-height: 1.4rem;
+            font-weight: 700;
+            align-self: center;
+            padding-left: 7px;
+          }
+
+          .powered {
+            color: var(--yellowish);
+            font-size: 11px;
+            font-weight: 500;
+            align-self: end;
+            padding-left: 5px;
+          }
+        }
+
+        hr {
+          background-color: rgb(91, 91, 91);
+          height: 1px;
+          border: none;
+        }
+      }
+
+      .footer-copyright-area {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: 15px 1fr 50px;
+        align-items: center;
+        margin-top: 0px;
+
+        .copyright-icon {
+          height: 15px;
+        }
+
+        p {
+          color: white;
+          font-size: 11px;
+          margin-left: 2px;
+        }
+
+        .as-logo {
+          width: 50px;
+          justify-self: right;
+          margin-right: -6px;
+        }
+      }
+    }
+  }
+
+  .development-area {
+    height: 110px;
+    width: 100%;
+    background-color: rgb(43, 43, 43);
+
+    .container {
+      display: grid;
+      align-items: center;
+      grid-auto-flow: row;
+      grid-template-columns: auto;
+      grid-template-rows: 50px 1fr;
+      grid-gap: 4px;
+
+      p {
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      .icons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-self: start;
+
+        img {
+          height: 35px;
+        }
+
+        .npm-logo {
+          height: 25px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 950px) { 
+    .actual-footer-area {
+      height: 480px;
+
+      .container {
+        grid-template-rows: auto 1fr 60px;
+  
+        .footer-links-area {
+          grid-auto-flow: column;
+
+          .links-category {
+  
+            .category-link-area {
+              display: grid;
+            }
+          }
+        }
+  
+        .footer-logo-area {
+          display: inline;
+          border-bottom: none;
+        }
+  
+        .footer-copyright-area {
+          margin-top: -11px;
+  
+        }
+      }
+    }
+
+    .development-area {
+      height: 80px;
+  
+      .container {
+        grid-auto-flow: column;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto;
+        grid-gap: 3rem;
+  
+        p {
+          text-align: left;
+        }
+
+        .icons {
+          align-self: center;
+  
+          img {
+            height: 40px;
+          }
+
+          .npm-logo {
+            height: 30px;
+          }
+        }
+      }
+    }
+  }
+}

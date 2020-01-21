@@ -9,6 +9,7 @@ const menuButtons = document.querySelectorAll(".menu-button");
 const searchBarClear = document.querySelector(".search-bar-clear");
 const searchBarSearch = document.querySelector(".search-bar-search");
 const searchBarInput = document.querySelector("input");
+const workingArea = document.querySelector(".working-area");
 
 // ? Exports //
 export {
@@ -21,5 +22,6 @@ export {
   menuButtons,
   searchBarClear,
   searchBarSearch,
-  searchBarInput
+  searchBarInput,
+  workingArea
 };

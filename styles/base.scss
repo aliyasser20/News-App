@@ -17,6 +17,13 @@
 
 body {
   margin: 0;
+  height: calc(100vh - 75px);
+}
+
+.working-area {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--very-light-grey);
 }
 
 main {

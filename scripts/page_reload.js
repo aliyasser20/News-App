@@ -5,6 +5,7 @@ import {
   addSourceOptionsToLocalStorage
 } from "./local_storage";
 import { createMainElement } from "./main";
+import { workingArea } from "./element_selectors";
 // ? End of Imports //
 
 export async function homePageReload(details) {
@@ -50,7 +51,7 @@ export async function homePageReload(details) {
     }
 
     // ? Create and add main element to page //
-    document.body.appendChild(
+    workingArea.appendChild(
       await createMainElement("home", { topSource: details.topSource })
     );
   } catch (error) {
@@ -60,7 +61,7 @@ export async function homePageReload(details) {
     sessionStorage.setItem("currentSourceId", JSON.stringify("bbc-news"));
 
     // ? Create and add main element to page using bbc news as top news source //
-    document.body.appendChild(
+    workingArea.appendChild(
       await createMainElement("home", { topSource: "bbc-news" })
     );
   }
