@@ -9,9 +9,9 @@ export async function createMainElement(page, details) {
   if (page === "home") {
     mainElement.appendChild(await createHomeElement(details));
   } else if (page === "search") {
-    mainElement.appendChild(createSearchElement(details.keyword));
-  } else {
-    mainElement.appendChild(createCategoryElement(page));
+    mainElement.appendChild(await createSearchElement(details.keyword));
+  } else if (page === "category") {
+    mainElement.appendChild(await createCategoryElement(page));
   }
   return mainElement;
 }

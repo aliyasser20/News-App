@@ -86,12 +86,12 @@ export async function createTopNewsElement(currentSource) {
   topNewsElement.innerHTML += `
     <div class="news">
       <div class="first shadow white">
-        <button>
-          <h3 class="article-title">${maxCharactersApply(
-            topNewsArray[0].title,
-            100
-          )}</h3>
-        </button>
+        <a href="${topNewsArray[0].url}" class="article-title" target="_blank">
+        <h3 class="article-title">${maxCharactersApply(
+          topNewsArray[0].title,
+          100
+        )}</h3>
+        </a>
         <p class="article-headline">${maxCharactersApply(
           topNewsArray[0].description,
           140
@@ -105,12 +105,14 @@ export async function createTopNewsElement(currentSource) {
       </div>
       <div class="second">
         <div class="second-box shadow white">
-          <button>
-            <h3 class="article-title">${maxCharactersApply(
-              topNewsArray[1].title,
-              100
-            )}</h3>
-          </button>
+          <a href="${
+            topNewsArray[1].url
+          }" class="article-title" target="_blank">
+          <h3 class="article-title">${maxCharactersApply(
+            topNewsArray[1].title,
+            100
+          )}</h3>
+          </a>
           <p class="article-headline">${maxCharactersApply(
             topNewsArray[1].description,
             75
@@ -123,12 +125,14 @@ export async function createTopNewsElement(currentSource) {
           </div>
         </div>
         <div class="second-box shadow white">
-          <button>
-            <h3 class="article-title">${maxCharactersApply(
-              topNewsArray[2].title,
-              100
-            )}</h3>
-          </button>
+          <a href="${
+            topNewsArray[2].url
+          }" class="article-title" target="_blank">
+          <h3 class="article-title">${maxCharactersApply(
+            topNewsArray[2].title,
+            100
+          )}</h3>
+          </a>
           <p class="article-headline">${maxCharactersApply(
             topNewsArray[2].description,
             75
@@ -186,7 +190,7 @@ export async function createTopNewsElement(currentSource) {
       JSON.stringify(currentSourceIdSelected)
     );
 
-    homePageReload({ topSource: currentSourceIdSelected });
+    homePageReload("home", { topSource: currentSourceIdSelected });
   }
 
   function handleSliderLeftButtonClick(e) {

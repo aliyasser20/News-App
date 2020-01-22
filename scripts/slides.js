@@ -32,15 +32,15 @@ export async function handleWidthChange() {
   }
 
   if (width > 950 && thirdboxes.length !== 4) {
-    homePageReload({ topSource: currentSourceId });
+    homePageReload("home", { topSource: currentSourceId });
   }
 
   if (width <= 950 && width > 550 && thirdboxes.length !== 2) {
-    homePageReload({ topSource: currentSourceId });
+    homePageReload("home", { topSource: currentSourceId });
   }
 
   if (width < 550 && thirdboxes.length !== 1) {
-    homePageReload({ topSource: currentSourceId });
+    homePageReload("home", { topSource: currentSourceId });
   }
 }
 
@@ -107,15 +107,18 @@ async function singleSlideCreator(numberOfNewsPerSlide, slideNumber) {
   //     `;
   //   }
   // }
+
   for (let i = 0; i < numberOfNewsPerSlide; i++) {
     singleSlideHTML += `
       <div class="third-box shadow white">
-        <button>
-          <h3 class="article-title">${maxCharactersApply(
-            searchTopNewsArray[i + slideNumber * numberOfNewsPerSlide].title,
-            70
-          )}</h3>
-        </button>
+        <a href="${
+          searchTopNewsArray[i + slideNumber * numberOfNewsPerSlide].url
+        }" class="article-title" target="_blank">
+        <h3 class="article-title">${maxCharactersApply(
+          searchTopNewsArray[i + slideNumber * numberOfNewsPerSlide].title,
+          70
+        )}</h3>
+        </a>
         <p class="article-date">${ageCalc(
           searchTopNewsArray[i + slideNumber * numberOfNewsPerSlide].publishedAt
         )}</p>

@@ -47,7 +47,7 @@ menuButtons.forEach(button =>
 const currentSourceId =
   JSON.parse(sessionStorage.getItem("currentSourceId")) || "bbc-news";
 
-homePageReload({ topSource: currentSourceId });
+homePageReload("home", { topSource: currentSourceId });
 
 // ? Reconfigure vh for mobile //
 window.addEventListener("resize", () => {
