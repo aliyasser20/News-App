@@ -17,7 +17,7 @@
 
 body {
   margin: 0;
-  height: calc(100vh - 75px);
+  min-height: calc(100vh - 75px);
   margin-top: 75px;
   width: 100%;
   zoom: 90%;

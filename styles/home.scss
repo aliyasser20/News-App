@@ -16,7 +16,7 @@
   padding-right: var(--gap);
   padding-bottom: 2rem;
 
-  .section-header {
+  .top-news>.section-header {
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: auto 1fr auto;
@@ -106,13 +106,6 @@
           font-weight: 500;
         }
       }
-    }
-
-    .following-title {
-      margin-top: 2rem;
-      font-weight: 500;
-      padding-bottom: 1rem;
-      color: var(--blackish-no-transp);
     }
   }
 
@@ -367,6 +360,102 @@
 
     }
   }
+}
+
+
+.home>.local-news {
+  width: 100%;
+  grid-area: local-news;
+
+  .section-header {
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    grid-gap: var(--gap);
+    margin-top: 1.25rem;
+    padding-bottom: 1rem;
+
+    .following-title {
+      font-weight: 500;
+      color: var(--blackish-no-transp);
+    }
+
+    .line {
+      height: 1px;
+      background-color: var(--blackish-no-transp);
+    }
+
+    .see-all {
+      color: var(--blackish-no-transp);
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .local-country {
+      text-align: right;
+      background-color: var(--yellowish);
+      font-weight: 500;
+      color: white;
+      padding: 0.5rem;
+    }
+  }
+
+  .country-selector-area {
+    // height: 950px;
+    display: grid;
+    grid-template-rows: 60px 600px 1fr;
+    border-radius: 3px;
+    grid-gap: .5rem;
+    
+    .request-area {
+      display: grid;
+      grid-template-columns: 1fr 150px;
+      height: 100%;
+      align-items: center;
+
+      .request {
+        // color: #bbbbbb;
+        color: rgb(60, 60, 60);
+        padding-left: 1rem;
+        font-weight: 500;
+      }
+
+      .powered-google {
+        background: url(../assets/powered-google@2x.png) no-repeat;
+        background-position: center;
+        background-size: 120px;
+        height: 100%;
+      }
+    }
+
+    #regions_div {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .country-buttons-area {
+      padding: 1rem;
+      display: inline;
+      text-align: center;
+
+      .country-button {
+        padding: 4px;
+        font-size: 13px;
+        margin: 4px;
+        text-align: center;
+        color: var(--text-hover);
+        font-weight: 500;
+      }
+
+      .country-button:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
 }
 
 @media only screen and (min-width: 550px) {
