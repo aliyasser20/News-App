@@ -102,34 +102,43 @@ export async function createLocalNewsElement(localType, country) {
     const newsElement = document.createElement("div");
     newsElement.classList.add("news");
 
-    let textDirection = "left";
-    if (country === "eg") textDirection = "right";
+    const textDirection = "left";
+    // if (country === "eg") textDirection = "right";
+
+    let iterator = 0;
 
     for (let i = 0; i < 6; i++) {
-      newsElement.innerHTML += `
-      <div class="card">
-        <div class="second-box shadow white">
-          <a href="${
-            localNewsArray[i].url
-          }" class="article-title" target="_blank">
-          <h3 class="article-title" style="text-align: ${textDirection};">${maxCharactersApply(
-        localNewsArray[i].title,
-        100
-      )}</h3>
-          </a>
-          <p class="article-headline" style="text-align: ${textDirection};">${maxCharactersApply(
-        localNewsArray[i].description,
-        75
-      )}</p>
-          <p class="article-date">${ageCalc(localNewsArray[i].publishedAt)}</p>
-          <div class="image-container"
-            style="background-image: url(${imageAvailability(
-              localNewsArray[i].urlToImage
-            )});">
+      if (localNewsArray[i + iterator].title) {
+        newsElement.innerHTML += `
+        <div class="card">
+          <div class="second-box shadow white">
+            <a href="${
+              localNewsArray[i + iterator].url
+            }" class="article-title" target="_blank">
+            <h3 class="article-title" style="text-align: ${textDirection};">${maxCharactersApply(
+          localNewsArray[i + iterator].title,
+          100
+        )}</h3>
+            </a>
+            <p class="article-headline" style="text-align: ${textDirection};">${maxCharactersApply(
+          localNewsArray[i + iterator].description,
+          75
+        )}</p>
+            <p class="article-date">${ageCalc(
+              localNewsArray[i + iterator].publishedAt
+            )}</p>
+            <div class="image-container"
+              style="background-image: url(${imageAvailability(
+                localNewsArray[i + iterator].urlToImage
+              )});">
+            </div>
           </div>
         </div>
-      </div>
-      `;
+        `;
+      } else {
+        iterator += 1;
+        i -= 1;
+      }
     }
 
     localNewsElement.appendChild(newsElement);

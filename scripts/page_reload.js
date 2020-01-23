@@ -7,7 +7,7 @@ import {
 import { createMainElement } from "./main";
 import { workingArea } from "./element_selectors";
 import { drawMap } from "./google_maps_api";
-
+import { countriesArray } from "./country_code";
 // ? End of Imports //
 
 export async function homePageReload(page, details) {
@@ -47,13 +47,22 @@ export async function homePageReload(page, details) {
         console.log("fetched searchTop news");
       }
 
+      let countrySelectedName;
+
+      countriesArray.forEach(countryEntry => {
+        if (countryEntry[1] === details.country) {
+          countrySelectedName = countryEntry[0];
+        }
+      });
+
       if (
         !(await JSON.parse(sessionStorage.getItem(`local--${details.country}`)))
       ) {
         await addNewsToLocalStorage(
-          fetchNews("top", {
-            country: details.country,
-            pageSize: 30
+          fetchNews("search", {
+            keywords: countrySelectedName,
+            pageSize: 40,
+            sortBy: "relevancy"
           }),
           `local--${details.country}`
         );
