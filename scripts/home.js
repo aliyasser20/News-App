@@ -12,7 +12,7 @@ export async function createHomeElement(details) {
   homeElement.appendChild(
     await createLocalNewsElement(details.localType, details.country)
   );
-  // homeElement.appendChild(await createCategoryNewsElement());
+  homeElement.appendChild(await createCategoryNewsElement());
 
   return homeElement;
 }

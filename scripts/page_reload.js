@@ -21,6 +21,7 @@ export async function homePageReload(page, details) {
       }
 
       // ? News data is available on local storage don't fetch and add to local storage otherwise fetch and add to local storage //
+      // ? top //
       if (
         !(await JSON.parse(sessionStorage.getItem(`top--${details.topSource}`)))
       ) {
@@ -31,6 +32,7 @@ export async function homePageReload(page, details) {
         console.log("fetched news");
       }
 
+      // ? topsearch //
       if (
         !(await JSON.parse(
           sessionStorage.getItem(`searchTop--${details.topSource}`)
@@ -47,6 +49,7 @@ export async function homePageReload(page, details) {
         console.log("fetched searchTop news");
       }
 
+      // ? local //
       let countrySelectedName;
 
       countriesArray.forEach(countryEntry => {
@@ -68,6 +71,33 @@ export async function homePageReload(page, details) {
         );
         console.log("fetched local news");
       }
+
+      // ? categories //
+      const categoriesArray = [
+        "business",
+        "health",
+        "sports",
+        "science",
+        "technology",
+        "entertainment"
+      ];
+
+      categoriesArray.forEach(async function(category) {
+        console.log("worked");
+        if (
+          !(await JSON.parse(sessionStorage.getItem(`category--${category}`)))
+        ) {
+          await addNewsToLocalStorage(
+            fetchNews("search", {
+              keywords: category,
+              pageSize: 60,
+              sortBy: "relevancy"
+            }),
+            `category--${category}`
+          );
+          console.log("fetched category news");
+        }
+      });
 
       // ? Source options are available on local storage don't fetch and add to local storage otherwise fetch and add to local storage //
       if (!(await JSON.parse(sessionStorage.getItem("sourceOptionsArray")))) {

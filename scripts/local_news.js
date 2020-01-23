@@ -17,11 +17,14 @@ export async function createLocalNewsElement(localType, country) {
   const localHeaderElement = document.createElement("span");
   localHeaderElement.classList.add("section-header");
 
+  let hiddenOrNot = "";
+  if (localType === "map") hiddenOrNot = "hidden";
+
   localHeaderElement.innerHTML += `
     <h2 class="following-title">Local News</h2>
     <button class="local-country">${country}</button>
     <div class="line"></div>
-    <button class="see-all">See All</button>
+    <button class="see-all" ${hiddenOrNot}>See All</button>
   `;
 
   localNewsElement.appendChild(localHeaderElement);
