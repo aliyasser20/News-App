@@ -1,10 +1,15 @@
+// ? Imports //
+import { countriesArray } from "./country_code";
+import { homePageReload } from "./page_reload";
+// ? End of Imports //
+
 // ? Load packages and set api key //
 google.charts.load("current", {
   packages: ["geochart"],
   mapsApiKey: "AIzaSyBKE0Ll1qhSU9lXciUhxbROrq7FXrIUFqw"
 });
 
-//! Draw regions map function -------------------------------------------------------------------------------------------------- //
+// //! Draw regions map function -------------------------------------------------------------------------------------------------- //
 function drawRegionsMap() {
   // ? Set countries available/clickable on map //
   const data = google.visualization.arrayToDataTable([
@@ -12,7 +17,6 @@ function drawRegionsMap() {
     ["Argentina"],
     ["Austria"],
     ["Australia"],
-    ["Belgium"],
     ["Bulgaria"],
     ["Brazil"],
     ["Canada"],
@@ -78,8 +82,9 @@ function drawRegionsMap() {
     keepAspectRatio: false
   };
 
-  // ? Create new chart are by selecting an element on the page //
   const container = document.querySelector("#regions_div");
+
+  // ? Create new chart are by selecting an element on the page //
   const chart = new google.visualization.GeoChart(container);
 
   // ? Draw map //
@@ -88,9 +93,30 @@ function drawRegionsMap() {
   // ? Select region handler //
   function SelectHandler() {
     const selection = chart.getSelection();
+
+    let countrySelectedCode;
+
     if (selection.length > 0) {
-      console.log(data.getValue(selection[0].row, 0));
+      countriesArray.forEach(country => {
+        if (country[0] === data.getValue(selection[0].row, 0)) {
+          countrySelectedCode = country[1];
+        }
+      });
     }
+
+    sessionStorage.setItem(
+      "current-country",
+      JSON.stringify(countrySelectedCode)
+    );
+
+    const currentSourceId =
+      JSON.parse(sessionStorage.getItem("currentSourceId")) || "bbc-news";
+
+    homePageReload("home", {
+      topSource: currentSourceId,
+      country: countrySelectedCode,
+      localType: "news"
+    });
   }
 
   // ? Add event listener for region click //
@@ -99,63 +125,7 @@ function drawRegionsMap() {
 // ! --------------------------------------------------------------------------------------------------------------------------- //
 
 //! Draw map callable function ------------------------------------------------------------------------------------------------- //
-export function drawMap() {
-  google.charts.setOnLoadCallback(drawRegionsMap);
+export async function drawMap() {
+  await google.charts.setOnLoadCallback(drawRegionsMap);
 }
 // ! --------------------------------------------------------------------------------------------------------------------------- //
-
-const countriesArray = [
-  ["United Arab Emirates", "ae"],
-  ["Argentina", "ar"],
-  ["Austria", "at"],
-  ["Australia", "au"],
-  ["Belgium", "be"],
-  ["Bulgaria", "bg"],
-  ["Brazil", "br"],
-  ["Canada", "ca"],
-  ["Switzerland", "ch"],
-  ["China", "cn"],
-  ["Colombia", "co"],
-  ["Cuba", "cu"],
-  ["Czech Republic", "cz"],
-  ["Germany", "de"],
-  ["Egypt", "eg"],
-  ["France", "fr"],
-  ["United Kingdom", "gb"],
-  ["Greece", "gr"],
-  ["Hong Kong", "hk"],
-  ["Hungary", "hu"],
-  ["Indonesia", "id"],
-  ["Ireland", "ie"],
-  ["India", "in"],
-  ["Italy", "it"],
-  ["Japan", "jp"],
-  ["South Korea", "kr"],
-  ["Lithuania", "lt"],
-  ["Latvia", "lv"],
-  ["Morocco", "ma"],
-  ["Mexico", "mx"],
-  ["Malaysia", "my"],
-  ["Nigeria", "ng"],
-  ["Netherlands", "nl"],
-  ["Norway", "no"],
-  ["New Zealand", "nz"],
-  ["Philippines", "ph"],
-  ["Poland", "pl"],
-  ["Portugal", "pt"],
-  ["Romania", "ro"],
-  ["Serbia", "rs"],
-  ["Russia", "ru"],
-  ["Saudi Arabia", "sa"],
-  ["Sweden", "se"],
-  ["Singapore", "sg"],
-  ["Slovenia", "si"],
-  ["Slovakia", "sk"],
-  ["Thailand", "th"],
-  ["Turkey", "tr"],
-  ["Taiwan", "tw"],
-  ["Ukraine", "ua"],
-  ["United States", "us"],
-  ["Venezuela", "ve"],
-  ["South Africa", "za"]
-];

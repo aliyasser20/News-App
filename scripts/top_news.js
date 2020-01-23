@@ -10,6 +10,9 @@ export async function createTopNewsElement(currentSource) {
     sessionStorage.getItem("sourceOptionsArray")
   );
 
+  const currentCountryFromStorage =
+    JSON.parse(sessionStorage.getItem("current-country")) || "CA";
+
   let currentSourceName = "";
 
   sourceOptionsArray.forEach(sourceOption => {
@@ -190,7 +193,11 @@ export async function createTopNewsElement(currentSource) {
       JSON.stringify(currentSourceIdSelected)
     );
 
-    homePageReload("home", { topSource: currentSourceIdSelected });
+    homePageReload("home", {
+      topSource: currentSourceIdSelected,
+      country: currentCountryFromStorage,
+      localType: "news"
+    });
   }
 
   function handleSliderLeftButtonClick(e) {

@@ -1,5 +1,4 @@
 // ? Imports //
-import { drawMap } from "./google_maps_api";
 import {
   searchIcon,
   mobileMenuIcon,
@@ -14,12 +13,6 @@ import {
 } from "./handlers";
 import { homePageReload } from "./page_reload";
 // ? End of Imports //
-
-// ? Draw map //
-// drawMap();
-
-// ? Add event listener for click on region //
-// document.addEventListener("click", () => getSelection());
 
 // ? Add event listener for search icon click //
 searchIcon.addEventListener("click", handleSearchIconClick);
@@ -47,7 +40,25 @@ menuButtons.forEach(button =>
 const currentSourceId =
   JSON.parse(sessionStorage.getItem("currentSourceId")) || "bbc-news";
 
-homePageReload("home", { topSource: currentSourceId });
+let currentCountryFromStorage = JSON.parse(
+  sessionStorage.getItem("current-country")
+);
+
+if (currentCountryFromStorage) {
+  homePageReload("home", {
+    topSource: currentSourceId,
+    country: currentCountryFromStorage,
+    localType: "news"
+  });
+} else {
+  currentCountryFromStorage = "ca";
+
+  homePageReload("home", {
+    topSource: currentSourceId,
+    country: currentCountryFromStorage,
+    localType: "map"
+  });
+}
 
 // ? Reconfigure vh for mobile //
 window.addEventListener("resize", () => {
@@ -65,9 +76,9 @@ function hasTouch() {
 }
 
 if (hasTouch()) {
-  // remove all the :hover stylesheets
+  // ? remove all the :hover stylesheets
   try {
-    // prevent exception on browsers not supporting DOM styleSheets properly
+    // ? prevent exception on browsers not supporting DOM styleSheets properly
     for (const si in document.styleSheets) {
       const styleSheet = document.styleSheets[si];
       if (!styleSheet.rules) continue;

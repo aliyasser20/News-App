@@ -9,8 +9,10 @@ export async function createHomeElement(details) {
   homeElement.classList.add("home");
 
   homeElement.appendChild(await createTopNewsElement(details.topSource));
-  // homeElement.appendChild(createLocalNewsElement());
-  // homeElement.appendChild(createCategoryNewsElement());
+  homeElement.appendChild(
+    await createLocalNewsElement(details.localType, details.country)
+  );
+  // homeElement.appendChild(await createCategoryNewsElement());
 
   return homeElement;
 }

@@ -3,6 +3,8 @@ import { ageCalc, maxCharactersApply, imageAvailability } from "./utility";
 
 export async function handleWidthChange() {
   const width = window.innerWidth || document.body.clientWidth;
+  const currentCountryFromStorage =
+    JSON.parse(sessionStorage.getItem("current-country")) || "CA";
 
   let thirdboxes;
   const third = document.querySelector(".third");
@@ -32,15 +34,27 @@ export async function handleWidthChange() {
   }
 
   if (width > 950 && thirdboxes.length !== 4) {
-    homePageReload("home", { topSource: currentSourceId });
+    homePageReload("home", {
+      topSource: currentSourceId,
+      country: currentCountryFromStorage,
+      localType: "news"
+    });
   }
 
   if (width <= 950 && width > 550 && thirdboxes.length !== 2) {
-    homePageReload("home", { topSource: currentSourceId });
+    homePageReload("home", {
+      topSource: currentSourceId,
+      country: currentCountryFromStorage,
+      localType: "news"
+    });
   }
 
   if (width < 550 && thirdboxes.length !== 1) {
-    homePageReload("home", { topSource: currentSourceId });
+    homePageReload("home", {
+      topSource: currentSourceId,
+      country: currentCountryFromStorage,
+      localType: "news"
+    });
   }
 }
 
