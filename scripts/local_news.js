@@ -42,7 +42,6 @@ export async function createLocalNewsElement(localType, country) {
         <button class="country-button">Argentina</button>
         <button class="country-button">Austria</button>
         <button class="country-button">Australia</button>
-        <button class="country-button">Belgium</button>
         <button class="country-button">Bulgaria</button>
         <button class="country-button">Brazil</button>
         <button class="country-button">Canada</button>
