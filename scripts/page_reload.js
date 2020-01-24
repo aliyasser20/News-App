@@ -115,7 +115,7 @@ export async function homePageReload(page, details, condition) {
 
       await load(details);
       if (condition === "initial") {
-        await wait(1700);
+        await wait(1000);
       }
 
       // ? Create and add main element to page //
