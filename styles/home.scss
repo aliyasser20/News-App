@@ -854,6 +854,7 @@
         }
       }
     }
+
   }
 
   .home>.local-news {
@@ -890,6 +891,13 @@
           }
         }
       }
+    }
+  }
+
+  .home>.categories>.category-news>.news>.third-box {
+    .article-title {
+      font-size: 1.1rem;
+      line-height: 1.15rem;
     }
   }
 }
