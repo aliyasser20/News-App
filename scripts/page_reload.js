@@ -109,7 +109,7 @@ export async function homePageReload(page, details) {
       }
 
       await load(details);
-      await wait(200);
+      await wait(100);
 
       // ? Create and add main element to page //
       workingArea.appendChild(
