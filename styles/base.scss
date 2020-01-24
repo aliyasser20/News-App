@@ -4,8 +4,8 @@
   --greyish: rgba(0, 0, 0, 0.26);
   --yellowish: #FCAE00;
   --dark-yellowish: #EDA400;
-  --very-light-grey: rgba(250,250,250, 1);
-  // --very-light-grey: #fffcf4;
+  // --very-light-grey: rgba(250,250,250, 1);
+  --very-light-grey: #fffcf4;
   --blur: 12px;
   --text-hover: #0085D8;
   --gap: 1.3rem;
@@ -38,7 +38,7 @@ body {
   min-height: 300vh;
   width: 100%;
   background-color: var(--very-light-grey);
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
 }
 
 main {

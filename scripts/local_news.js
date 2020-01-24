@@ -105,7 +105,6 @@ export async function createLocalNewsElement(localType, country) {
     newsElement.classList.add("news");
 
     const textDirection = "left";
-    // if (country === "eg") textDirection = "right";
 
     let iterator = 0;
 

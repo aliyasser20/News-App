@@ -26,7 +26,7 @@ async function createEachCategoryElement(category) {
 
   const englishStringRegex = /(\sis\s)|(\sor\s)|(\sand\s)|(\sin\s)|(\sthis\s)|(\sthe\s)|(\san\s)|(\sof\s)|(\sby\s)|(\shave\s)/g;
 
-  for (let i = 1; i < 5; i++) {
+  for (let i = 0; i < 4; i++) {
     if (categoryNewsArray[i + iterator].title.match(englishStringRegex)) {
       newsElement.innerHTML += `
         <div class="third-box shadow white">
@@ -35,7 +35,7 @@ async function createEachCategoryElement(category) {
           }" class="article-title" target="_blank">
             <h3 class="article-title";">${maxCharactersApply(
               categoryNewsArray[i + iterator].title,
-              100
+              70
             )}</h3>
           </a>
           <p class="article-date">${ageCalc(
