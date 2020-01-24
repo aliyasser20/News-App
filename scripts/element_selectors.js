@@ -10,6 +10,7 @@ const searchBarClear = document.querySelector(".search-bar-clear");
 const searchBarSearch = document.querySelector(".search-bar-search");
 const searchBarInput = document.querySelector("input");
 const workingArea = document.querySelector(".working-area");
+const cssLoaderElement = workingArea.querySelector(".css-loader");
 
 // ? Exports //
 export {
@@ -23,5 +24,6 @@ export {
   searchBarClear,
   searchBarSearch,
   searchBarInput,
-  workingArea
+  workingArea,
+  cssLoaderElement
 };

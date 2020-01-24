@@ -5,7 +5,7 @@ import {
   addSourceOptionsToLocalStorage
 } from "./local_storage";
 import { createMainElement } from "./main";
-import { workingArea } from "./element_selectors";
+import { workingArea, cssLoaderElement } from "./element_selectors";
 import { drawMap } from "./google_maps_api";
 import { countriesArray } from "./country_code";
 import { wait } from "./utility";
@@ -99,6 +99,11 @@ async function load(details) {
 
 // ! --------------------------------------------------------------------------
 export async function homePageReload(page, details, condition) {
+  // ? Activate css-loader //
+  cssLoaderElement.classList.remove("css-loader-hidden");
+  cssLoaderElement.classList.add("css-loader-shown");
+  // ?
+
   if (page === "home") {
     // ? Try catch for handeling error //
     try {
@@ -110,7 +115,7 @@ export async function homePageReload(page, details, condition) {
 
       await load(details);
       if (condition === "initial") {
-        await wait(300);
+        await wait(1700);
       }
 
       // ? Create and add main element to page //
@@ -151,4 +156,9 @@ export async function homePageReload(page, details, condition) {
     // ? Add event listener for click on region //
     document.addEventListener("click", () => getSelection());
   }
+
+  // ? Deactivate css-loader //
+  cssLoaderElement.classList.remove("css-loader-shown");
+  cssLoaderElement.classList.add("css-loader-hidden");
+  // ?
 }
