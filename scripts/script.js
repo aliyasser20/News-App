@@ -53,11 +53,15 @@ if (currentCountryFromStorage) {
 } else {
   currentCountryFromStorage = "ca";
 
-  homePageReload("home", {
-    topSource: currentSourceId,
-    country: currentCountryFromStorage,
-    localType: "map"
-  });
+  homePageReload(
+    "home",
+    {
+      topSource: currentSourceId,
+      country: currentCountryFromStorage,
+      localType: "map"
+    },
+    "initial"
+  );
 }
 
 // ? Reconfigure vh for mobile //

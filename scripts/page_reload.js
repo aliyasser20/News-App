@@ -98,7 +98,7 @@ async function load(details) {
 }
 
 // ! --------------------------------------------------------------------------
-export async function homePageReload(page, details) {
+export async function homePageReload(page, details, condition) {
   if (page === "home") {
     // ? Try catch for handeling error //
     try {
@@ -109,7 +109,9 @@ export async function homePageReload(page, details) {
       }
 
       await load(details);
-      await wait(100);
+      if (condition === "initial") {
+        await wait(300);
+      }
 
       // ? Create and add main element to page //
       workingArea.appendChild(
