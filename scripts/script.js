@@ -3,13 +3,15 @@ import {
   searchIcon,
   mobileMenuIcon,
   logoButton,
-  menuButtons
+  menuButtons,
+  footerButtons
 } from "./element_selectors";
 import {
   handleSearchIconClick,
   handleMobileMenuIconClick,
   handleLogoHomeButtonClick,
-  handleMenuButtonClick
+  handleMenuButtonClick,
+  handleFooterButtonClick
 } from "./handlers";
 import { homePageReload } from "./page_reload";
 // ? End of Imports //
@@ -36,9 +38,16 @@ menuButtons.forEach(button =>
   button.addEventListener("click", handleMenuButtonClick)
 );
 
+// ? Add event listner for footer buttons //
+footerButtons.forEach(button =>
+  button.addEventListener("click", handleFooterButtonClick)
+);
+
 // ? Run on page load //
 const currentSourceId =
   JSON.parse(sessionStorage.getItem("currentSourceId")) || "bbc-news";
+
+sessionStorage.setItem("current-country", JSON.stringify("ca"));
 
 let currentCountryFromStorage = JSON.parse(
   sessionStorage.getItem("current-country")

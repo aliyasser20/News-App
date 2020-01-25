@@ -9,6 +9,7 @@ export async function createCategoryElement(
   selectedCategory,
   selectedParentCategory
 ) {
+  console.log(selectedCategory);
   const categoryPageElement = document.createElement("div");
   categoryPageElement.classList.add("category-page");
 
@@ -64,7 +65,6 @@ export async function createCategoryElement(
     categoryPageNewsArray = await JSON.parse(
       sessionStorage.getItem(identifier)
     );
-    console.log("local news more");
 
     const countrySelectedName = "US&nbsp & &nbspCanada";
 
@@ -85,18 +85,18 @@ export async function createCategoryElement(
         }),
         identifier
       );
+    }
 
-      categoryPageNewsArray = await JSON.parse(
-        sessionStorage.getItem(identifier)
-      );
+    categoryPageNewsArray = await JSON.parse(
+      sessionStorage.getItem(identifier)
+    );
 
-      categoryPageHeaderElement.innerHTML += `
+    categoryPageHeaderElement.innerHTML += `
       <div class="category-header">
         <h2>${selectedParentCategory} - ${selectedCategory}</h2>
       </div>
       `;
-      console.log("fetched else news");
-    }
+    console.log("fetched else news");
   }
 
   const categoryPageNewsElement = document.createElement("div");
@@ -148,7 +148,7 @@ export async function createCategoryElement(
           }" class="article-title" target="_blank">
             <h3 class="article-title">${maxCharactersApply(
               categoryPageNewsArray[i + iterator].title,
-              100
+              80
             )}</h3>
           </a>
           <p class="article-headline">${maxCharactersApply(

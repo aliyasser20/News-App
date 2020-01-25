@@ -125,3 +125,57 @@ export function handleSearchBarSearchClick(e) {
   e.preventDefault();
   const searchInputted = searchBarInput.value;
 }
+
+export function handleFooterButtonClick(e) {
+  e.preventDefault();
+
+  const pressedButtonElement = e.currentTarget;
+  const pressedButton = e.currentTarget.innerText.toLowerCase();
+  let parentButtonElement;
+  let parentButton;
+
+  if (pressedButtonElement.classList.contains("following-link")) {
+    const buttonParentElement = e.currentTarget.parentNode.parentNode;
+    parentButtonElement = buttonParentElement.querySelector(".category-link");
+    parentButton = parentButtonElement.innerText.toLowerCase();
+
+    homePageReload("category", {
+      selectedCategory: pressedButton,
+      selectedParentCategory: parentButton
+    });
+  } else {
+    homePageReload("category", {
+      selectedCategory: pressedButton,
+      selectedParentCategory: pressedButton
+    });
+
+    parentButton = pressedButton;
+  }
+
+  window.scrollTo(0, 0);
+
+  toggleSearchDisplay("off");
+  toggleMobileMenuDisplay("off");
+
+  const currentlySelectedMenuButtons = document.querySelectorAll(
+    ".selected.menu-button"
+  );
+
+  currentlySelectedMenuButtons.forEach(button => {
+    button.classList.remove("selected");
+  });
+
+  const newSelectedMenuButtons = [];
+
+  const menuButtons = document.querySelectorAll(".menu-button");
+
+  menuButtons.forEach(button => {
+    if (button.firstElementChild.innerText.toLowerCase() === parentButton) {
+      newSelectedMenuButtons.push(button);
+    }
+  });
+
+  newSelectedMenuButtons.forEach(button => {
+    button.classList.add("selected");
+  });
+}

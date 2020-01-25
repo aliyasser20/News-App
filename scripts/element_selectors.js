@@ -11,6 +11,8 @@ const searchBarSearch = document.querySelector(".search-bar-search");
 const searchBarInput = document.querySelector("input");
 const workingArea = document.querySelector(".working-area");
 const cssLoaderElement = workingArea.querySelector(".css-loader");
+const footer = document.querySelector("footer");
+const footerButtons = footer.querySelectorAll("button");
 
 // ? Exports //
 export {
@@ -25,5 +27,6 @@ export {
   searchBarSearch,
   searchBarInput,
   workingArea,
-  cssLoaderElement
+  cssLoaderElement,
+  footerButtons
 };
