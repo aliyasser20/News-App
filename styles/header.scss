@@ -27,6 +27,10 @@ header {
       justify-content: center;
     }
 
+    .logo {
+      padding-top: 4px;
+    }
+
     .logo img {
       width: 25px;
     }
@@ -210,7 +214,7 @@ header {
     color: var(--yellowish);
   }
 
-  .selected {
+  .selected>p {
     color: var(--yellowish);
   }
 }
