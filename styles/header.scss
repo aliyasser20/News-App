@@ -206,7 +206,11 @@ header {
     border-top: solid 0.5px rgba(255, 255, 255, 0.2);
   }
 
-  .selected, button:hover {
+  button:hover {
+    color: var(--yellowish);
+  }
+
+  .selected {
     color: var(--yellowish);
   }
 }

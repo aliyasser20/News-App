@@ -13,7 +13,7 @@ import {
 } from "./handlers";
 
 // ! Toggle search bar display function ------------------------------------------------------------------------------ //
-export function toggleSearchDisplay() {
+export function toggleSearchDisplay(forced) {
   if (searchIcon.classList.contains("clicked")) {
     searchIcon.classList.remove("clicked");
     searchBar.classList.remove("display-search");
@@ -25,7 +25,7 @@ export function toggleSearchDisplay() {
 
     // ? Remove event listener for search bar search button //
     searchBarSearch.removeEventListener("click", handleSearchBarSearchClick);
-  } else {
+  } else if (forced !== "off") {
     searchIcon.classList.add("clicked");
     searchBar.classList.remove("hide-search");
     searchBar.classList.add("display-search");

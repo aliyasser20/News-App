@@ -1,5 +1,7 @@
 // ? Imports //
 import { ageCalc, maxCharactersApply, imageAvailability } from "./utility";
+import { homePageReload } from "./page_reload";
+import { toggleSearchDisplay } from "./search_menu_bar";
 // ? End of Imports //
 
 async function createEachCategoryElement(category) {
@@ -72,5 +74,51 @@ export async function createCategoryNewsElement() {
     await createEachCategoryElement("entertainment")
   );
 
+  function handleSeeAllButtonClick(e) {
+    const parentElement = e.target.parentNode;
+    const selectedCategoryTitle = parentElement
+      .querySelector(".title")
+      .innerText.toLowerCase();
+
+    window.scrollTo(0, 0);
+
+    toggleSearchDisplay("off");
+
+    const currentlySelectedMenuButtons = document.querySelectorAll(
+      ".selected.menu-button"
+    );
+
+    currentlySelectedMenuButtons.forEach(button => {
+      button.classList.remove("selected");
+    });
+
+    const newSelectedMenuButtons = [];
+
+    const menuButtons = document.querySelectorAll(".menu-button");
+
+    menuButtons.forEach(button => {
+      if (
+        button.firstElementChild.innerText.toLowerCase() ===
+        selectedCategoryTitle.toLowerCase()
+      ) {
+        newSelectedMenuButtons.push(button);
+      }
+    });
+
+    newSelectedMenuButtons.forEach(button => {
+      button.classList.add("selected");
+    });
+
+    homePageReload("category", {
+      selectedCategory: selectedCategoryTitle,
+      selectedParentCategory: selectedCategoryTitle
+    });
+  }
+
+  const seeAllButtons = categoriesElement.querySelectorAll(".see-all");
+
+  seeAllButtons.forEach(button =>
+    button.addEventListener("click", handleSeeAllButtonClick)
+  );
   return categoriesElement;
 }

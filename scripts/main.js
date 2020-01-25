@@ -11,7 +11,12 @@ export async function createMainElement(page, details) {
   } else if (page === "search") {
     mainElement.appendChild(await createSearchElement(details.keyword));
   } else if (page === "category") {
-    mainElement.appendChild(await createCategoryElement(page));
+    mainElement.appendChild(
+      await createCategoryElement(
+        details.selectedCategory,
+        details.selectedParentCategory
+      )
+    );
   }
   return mainElement;
 }

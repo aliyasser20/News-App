@@ -2,7 +2,7 @@
 import { ageCalc, maxCharactersApply, imageAvailability } from "./utility";
 import { homePageReload } from "./page_reload";
 import { countriesArray } from "./country_code";
-
+import { toggleSearchDisplay } from "./search_menu_bar";
 // ? End of Imports //
 
 export async function createLocalNewsElement(localType, country) {
@@ -109,7 +109,14 @@ export async function createLocalNewsElement(localType, country) {
     let iterator = 0;
 
     for (let i = 0; i < 6; i++) {
-      if (localNewsArray[i + iterator].title) {
+      if (
+        localNewsArray[i + iterator].title &&
+        localNewsArray[i + iterator].url &&
+        localNewsArray[i + iterator].description &&
+        localNewsArray[i + iterator].title.length > 1 &&
+        localNewsArray[i + iterator].url.length > 1 &&
+        localNewsArray[i + iterator].description.length > 1
+      ) {
         newsElement.innerHTML += `
         <div class="card">
           <div class="second-box shadow white">
@@ -202,6 +209,49 @@ export async function createLocalNewsElement(localType, country) {
   countryButtons.forEach(button =>
     button.addEventListener("click", handleCountryButtonClick)
   );
+
+  function handleSeeAllButtonClick(e) {
+    const parentElement = e.target.parentNode;
+    const selectedcountry = parentElement
+      .querySelector(".local-country")
+      .innerText.toLowerCase();
+
+    console.log(selectedcountry);
+
+    window.scrollTo(0, 0);
+
+    toggleSearchDisplay("off");
+
+    const currentlySelectedMenuButtons = document.querySelectorAll(
+      ".selected.menu-button"
+    );
+
+    currentlySelectedMenuButtons.forEach(button => {
+      button.classList.remove("selected");
+    });
+
+    const newSelectedMenuButtons = [];
+
+    const menuButtons = document.querySelectorAll(".menu-button");
+
+    menuButtons.forEach(button => {
+      if (button.firstElementChild.innerText.toLowerCase() === "local") {
+        newSelectedMenuButtons.push(button);
+      }
+    });
+
+    newSelectedMenuButtons.forEach(button => {
+      button.classList.add("selected");
+    });
+
+    homePageReload("category", {
+      selectedCategory: selectedcountry,
+      selectedParentCategory: selectedcountry
+    });
+  }
+
+  const seeAllButton = localNewsElement.querySelector(".see-all");
+  seeAllButton.addEventListener("click", handleSeeAllButtonClick);
 
   return localNewsElement;
 }

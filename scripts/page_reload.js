@@ -57,7 +57,7 @@ async function load(details) {
     await addNewsToLocalStorage(
       fetchNews("search", {
         keywords: countrySelectedName,
-        pageSize: 40,
+        pageSize: 50,
         sortBy: "relevancy"
       }),
       `local--${details.country}`
@@ -76,12 +76,11 @@ async function load(details) {
   ];
 
   categoriesArray.forEach(async function(category) {
-    console.log("worked");
     if (!(await JSON.parse(sessionStorage.getItem(`category--${category}`)))) {
       await addNewsToLocalStorage(
         fetchNews("search", {
           keywords: category,
-          pageSize: 60,
+          pageSize: 50,
           sortBy: "relevancy"
         }),
         `category--${category}`
@@ -89,6 +88,31 @@ async function load(details) {
       console.log("fetched category news");
     }
   });
+
+  // ? Add US and UK news //
+  if (!(await JSON.parse(sessionStorage.getItem("local--us")))) {
+    await addNewsToLocalStorage(
+      fetchNews("search", {
+        keywords: "us",
+        pageSize: 50,
+        sortBy: "relevancy"
+      }),
+      "local--us"
+    );
+    console.log("fetched us news");
+  }
+
+  if (!(await JSON.parse(sessionStorage.getItem("local--uk")))) {
+    await addNewsToLocalStorage(
+      fetchNews("search", {
+        keywords: "uk",
+        pageSize: 50,
+        sortBy: "relevancy"
+      }),
+      "local--uk"
+    );
+    console.log("fetched uk news");
+  }
 
   // ? Source options are available on local storage don't fetch and add to local storage otherwise fetch and add to local storage //
   if (!(await JSON.parse(sessionStorage.getItem("sourceOptionsArray")))) {
@@ -104,15 +128,15 @@ export async function homePageReload(page, details, condition) {
   cssLoaderElement.classList.add("css-loader-shown");
   // ?
 
+  // ? Select and clear main element //
+  const mainElement = document.querySelector("main");
+  if (mainElement) {
+    mainElement.parentNode.removeChild(mainElement);
+  }
+
   if (page === "home") {
     // ? Try catch for handeling error //
     try {
-      // ? Select and clear main element //
-      const mainElement = document.querySelector("main");
-      if (mainElement) {
-        mainElement.parentNode.removeChild(mainElement);
-      }
-
       await load(details);
       if (condition === "initial") {
         await wait(1000);
@@ -147,6 +171,30 @@ export async function homePageReload(page, details, condition) {
     console.log("search");
   } else if (page === "category") {
     console.log("category");
+
+    try {
+      workingArea.appendChild(
+        await createMainElement("category", {
+          selectedCategory: details.selectedCategory,
+          selectedParentCategory: details.selectedParentCategory
+        })
+      );
+    } catch (error) {
+      console.log(error);
+
+      sessionStorage.setItem("currentSourceId", JSON.stringify("bbc-news"));
+
+      sessionStorage.setItem("current-country", JSON.stringify("ca"));
+
+      // ? Create and add main element to page using bbc news as top news source //
+      workingArea.appendChild(
+        await createMainElement("home", {
+          topSource: "bbc-news",
+          country: "ca",
+          localType: "news"
+        })
+      );
+    }
   }
 
   if (details.localType === "map") {

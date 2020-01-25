@@ -19,17 +19,14 @@ export async function handleWidthChange() {
     (await JSON.parse(sessionStorage.getItem("currentSourceId"))) || "bbc-news";
 
   if (width > 950 && thirdboxes.length === 0) {
-    console.log("changed");
     return slidesCreator(4);
   }
 
   if (width <= 950 && width > 550 && thirdboxes.length === 0) {
-    console.log("changed");
     return slidesCreator(2);
   }
 
   if (width < 550 && thirdboxes.length === 0) {
-    console.log("changed");
     return slidesCreator(1);
   }
 
