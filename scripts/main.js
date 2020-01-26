@@ -9,7 +9,13 @@ export async function createMainElement(page, details) {
   if (page === "home") {
     mainElement.appendChild(await createHomeElement(details));
   } else if (page === "search") {
-    mainElement.appendChild(await createSearchElement(details.keyword));
+    mainElement.appendChild(
+      await createSearchElement(
+        details.searchInput,
+        details.searchSort,
+        details.currentPage
+      )
+    );
   } else if (page === "category") {
     mainElement.appendChild(
       await createCategoryElement(

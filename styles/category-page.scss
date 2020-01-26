@@ -227,7 +227,7 @@
       }
 
       .card {
-        grid-template-columns: 47.5% 1fr;
+        // grid-template-columns: 47.5% 1fr;
         .second-box {
           
           grid-template-areas: 
@@ -291,9 +291,15 @@
       }
 
       .card {
-        grid-template-columns: 47.5% 1fr;
+        // grid-template-columns: 47.5% 1fr;
 
         .second-box {
+
+          // grid-template-areas: 
+          // "title image"
+          // "headline image"
+          // "date image"
+          // ;
 
           .article-title {
             font-size: 1.2rem;

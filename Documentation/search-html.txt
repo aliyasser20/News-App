@@ -1,0 +1,177 @@
+<main>
+  <div class="search-page">
+    <div class="search-page-bar-area">
+      <form>
+        <button class="search-bar-search">
+          <div class="search-bar-icon"></div>
+        </button>
+        <input type="text" placeholder="Search news ...">
+        <button class="search-bar-clear">&nbsp&nbspClear</button>
+      </form>
+    </div>
+    <!-- <h3 class="no-results">No results found</h3> -->
+    <div class="sort-area">
+      <p>Sort by:</p>
+      <button class="sort-button selected-sort">Latest</button>
+      <button class="sort-button">Popularity</button>
+      <button class="sort-button">Relevancy</button>
+    </div>
+    <div class="search-news">
+      <div class="card">
+        <div class="second-box shadow white">
+          <a href="#" class="article-title" target="_blank">
+            <h3 class="article-title">Anger in Vietnam over deadly 'land grab' clashes</h3>
+          </a>
+          <p class="article-headline">Three police officers and a villager died when a long-running land dispute
+            turned violent.</p>
+          <p class="article-date">10 hours ago</p>
+          <div class="image-container"
+            style="background-image: url(https://ichef.bbci.co.uk/news/1024/branded_news/14FAB/production/_110513958_dongtam.jpg);">
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="second-box shadow white">
+          <a href="#" class="article-title" target="_blank">
+            <h3 class="article-title">Anger in Vietnam over deadly 'land grab' clashes</h3>
+          </a>
+          <p class="article-headline">Three police officers and a villager died when a long-running land dispute
+            turned violent.</p>
+          <p class="article-date">10 hours ago</p>
+          <div class="image-container"
+            style="background-image: url(https://ichef.bbci.co.uk/news/1024/branded_news/14FAB/production/_110513958_dongtam.jpg);">
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="second-box shadow white">
+          <a href="#" class="article-title" target="_blank">
+            <h3 class="article-title">Anger in Vietnam over deadly 'land grab' clashes</h3>
+          </a>
+          <p class="article-headline">Three police officers and a villager died when a long-running land dispute
+            turned violent.</p>
+          <p class="article-date">10 hours ago</p>
+          <div class="image-container"
+            style="background-image: url(https://ichef.bbci.co.uk/news/1024/branded_news/14FAB/production/_110513958_dongtam.jpg);">
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="second-box shadow white">
+          <a href="#" class="article-title" target="_blank">
+            <h3 class="article-title">Anger in Vietnam over deadly 'land grab' clashes</h3>
+          </a>
+          <p class="article-headline">Three police officers and a villager died when a long-running land dispute
+            turned violent.</p>
+          <p class="article-date">10 hours ago</p>
+          <div class="image-container"
+            style="background-image: url(https://ichef.bbci.co.uk/news/1024/branded_news/14FAB/production/_110513958_dongtam.jpg);">
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="second-box shadow white">
+          <a href="#" class="article-title" target="_blank">
+            <h3 class="article-title">Anger in Vietnam over deadly 'land grab' clashes</h3>
+          </a>
+          <p class="article-headline">Three police officers and a villager died when a long-running land dispute
+            turned violent.</p>
+          <p class="article-date">10 hours ago</p>
+          <div class="image-container"
+            style="background-image: url(https://ichef.bbci.co.uk/news/1024/branded_news/14FAB/production/_110513958_dongtam.jpg);">
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="second-box shadow white">
+          <a href="#" class="article-title" target="_blank">
+            <h3 class="article-title">Anger in Vietnam over deadly 'land grab' clashes</h3>
+          </a>
+          <p class="article-headline">Three police officers and a villager died when a long-running land dispute
+            turned violent.</p>
+          <p class="article-date">10 hours ago</p>
+          <div class="image-container"
+            style="background-image: url(https://ichef.bbci.co.uk/news/1024/branded_news/14FAB/production/_110513958_dongtam.jpg);">
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="second-box shadow white">
+          <a href="#" class="article-title" target="_blank">
+            <h3 class="article-title">Anger in Vietnam over deadly 'land grab' clashes</h3>
+          </a>
+          <p class="article-headline">Three police officers and a villager died when a long-running land dispute
+            turned violent.</p>
+          <p class="article-date">10 hours ago</p>
+          <div class="image-container"
+            style="background-image: url(https://ichef.bbci.co.uk/news/1024/branded_news/14FAB/production/_110513958_dongtam.jpg);">
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="second-box shadow white">
+          <a href="#" class="article-title" target="_blank">
+            <h3 class="article-title">Anger in Vietnam over deadly 'land grab' clashes</h3>
+          </a>
+          <p class="article-headline">Three police officers and a villager died when a long-running land dispute
+            turned violent.</p>
+          <p class="article-date">10 hours ago</p>
+          <div class="image-container"
+            style="background-image: url(https://ichef.bbci.co.uk/news/1024/branded_news/14FAB/production/_110513958_dongtam.jpg);">
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="second-box shadow white">
+          <a href="#" class="article-title" target="_blank">
+            <h3 class="article-title">Anger in Vietnam over deadly 'land grab' clashes</h3>
+          </a>
+          <p class="article-headline">Three police officers and a villager died when a long-running land dispute
+            turned violent.</p>
+          <p class="article-date">10 hours ago</p>
+          <div class="image-container"
+            style="background-image: url(https://ichef.bbci.co.uk/news/1024/branded_news/14FAB/production/_110513958_dongtam.jpg);">
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="second-box shadow white">
+          <a href="#" class="article-title" target="_blank">
+            <h3 class="article-title">Anger in Vietnam over deadly 'land grab' clashes</h3>
+          </a>
+          <p class="article-headline">Three police officers and a villager died when a long-running land dispute
+            turned violent.</p>
+          <p class="article-date">10 hours ago</p>
+          <div class="image-container"
+            style="background-image: url(https://ichef.bbci.co.uk/news/1024/branded_news/14FAB/production/_110513958_dongtam.jpg);">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="change-page-area">
+      <button class="change-page-button">
+        <div class="prev-icon"></div>
+        <p>Previous</p>
+      </button>
+      <button class="change-page-button change-page-button-selected">
+        <p>1</p>
+      </button>
+      <button class="change-page-button">
+        <p>2</p>
+      </button>
+      <button class="change-page-button">
+        <p>3</p>
+      </button>
+      <button class="change-page-button">
+        <p>4</p>
+      </button>
+      <button class="change-page-button">
+        <p>5</p>
+      </button>
+      <button class="change-page-button">
+        <p>Next</p>
+        <div class="next-icon"></div>
+      </button>
+    </div>
+  </div>
+</main>

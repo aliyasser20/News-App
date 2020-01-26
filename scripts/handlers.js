@@ -1,7 +1,7 @@
 // ? Imports //
 import { toggleSearchDisplay } from "./search_menu_bar";
 import { toggleMobileMenuDisplay } from "./mobile_menu";
-import { searchBarInput } from "./element_selectors";
+import { searchBarInput, searchIcon } from "./element_selectors";
 import { homePageReload } from "./page_reload";
 
 // ? End of Imports //
@@ -13,7 +13,13 @@ export function handleSearchIconClick(e) {
 
 export function handleMobileMenuIconClick(e) {
   e.preventDefault();
-  toggleMobileMenuDisplay();
+  const tester = document.querySelector(".search-page");
+
+  if (tester) {
+    toggleMobileMenuDisplay("no search");
+  } else {
+    toggleMobileMenuDisplay();
+  }
 }
 
 export function handleLogoHomeButtonClick(e) {
@@ -22,6 +28,7 @@ export function handleLogoHomeButtonClick(e) {
   window.scrollTo(0, 0);
 
   toggleSearchDisplay("off");
+  searchIcon.style.visibility = "";
 
   const currentlySelectedMenuButtons = document.querySelectorAll(
     ".selected.menu-button"
@@ -92,6 +99,7 @@ export function handleMenuButtonClick(e) {
 
   toggleSearchDisplay("off");
   toggleMobileMenuDisplay("off");
+  searchIcon.style.visibility = "";
 
   const currentlySelectedMenuButtons = document.querySelectorAll(
     ".selected.menu-button"
@@ -124,6 +132,28 @@ export function handleSearchBarClearClick(e) {
 export function handleSearchBarSearchClick(e) {
   e.preventDefault();
   const searchInputted = searchBarInput.value;
+
+  window.scrollTo(0, 0);
+  toggleSearchDisplay("off");
+  searchIcon.style.visibility = "hidden";
+
+  const currentlySelectedMenuButtons = document.querySelectorAll(
+    ".selected.menu-button"
+  );
+
+  currentlySelectedMenuButtons.forEach(button => {
+    button.classList.remove("selected");
+  });
+
+  if (searchBarInput.value.length > 0) {
+    homePageReload("search", {
+      searchInput: searchInputted,
+      searchSort: "Latest",
+      currentPage: "1"
+    });
+  }
+
+  searchBarInput.value = "";
 }
 
 export function handleFooterButtonClick(e) {
@@ -156,6 +186,7 @@ export function handleFooterButtonClick(e) {
 
   toggleSearchDisplay("off");
   toggleMobileMenuDisplay("off");
+  searchIcon.style.visibility = "";
 
   const currentlySelectedMenuButtons = document.querySelectorAll(
     ".selected.menu-button"

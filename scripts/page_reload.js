@@ -169,6 +169,31 @@ export async function homePageReload(page, details, condition) {
     }
   } else if (page === "search") {
     console.log("search");
+
+    try {
+      workingArea.appendChild(
+        await createMainElement("search", {
+          searchInput: details.searchInput,
+          searchSort: details.searchSort,
+          currentPage: details.currentPage
+        })
+      );
+    } catch (error) {
+      console.log(error);
+
+      sessionStorage.setItem("currentSourceId", JSON.stringify("bbc-news"));
+
+      sessionStorage.setItem("current-country", JSON.stringify("ca"));
+
+      // ? Create and add main element to page using bbc news as top news source //
+      workingArea.appendChild(
+        await createMainElement("home", {
+          topSource: "bbc-news",
+          country: "ca",
+          localType: "news"
+        })
+      );
+    }
   } else if (page === "category") {
     console.log("category");
 

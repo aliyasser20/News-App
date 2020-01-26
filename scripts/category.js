@@ -211,6 +211,10 @@ export async function createCategoryElement(
       iterator += 1;
       i -= 1;
     }
+
+    if (i + iterator === categoryPageNewsArray.length - 1) {
+      return;
+    }
   }
 
   const showMoreButtonAreaElement = document.createElement("div");

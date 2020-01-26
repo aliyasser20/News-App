@@ -11,7 +11,10 @@ export function toggleMobileMenuDisplay(forced) {
     mobileMenuIcon.classList.remove("menu-clicked");
     mobileMenuArea.classList.remove("display-mobile-menu");
     mobileMenuArea.classList.add("hide-mobile-menu");
-    searchIcon.style.visibility = "";
+
+    if (forced !== "no search") {
+      searchIcon.style.visibility = "";
+    }
 
     // ? Scroll stop and fix //
     const scrollYYY = document.body.style.top;
