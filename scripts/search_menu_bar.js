@@ -14,11 +14,15 @@ import {
 
 // ! Toggle search bar display function ------------------------------------------------------------------------------ //
 export function toggleSearchDisplay(forced) {
+  const searchInput = searchBar.querySelector("input");
+
   if (searchIcon.classList.contains("clicked")) {
     searchIcon.classList.remove("clicked");
     searchBar.classList.remove("display-search");
     searchBar.classList.add("hide-search");
     mobileMenuIcon.style.visibility = "";
+
+    searchInput.blur();
 
     // ? Remove event listener for search bar clear button //
     searchBarClear.removeEventListener("click", handleSearchBarClearClick);
@@ -30,6 +34,8 @@ export function toggleSearchDisplay(forced) {
     searchBar.classList.remove("hide-search");
     searchBar.classList.add("display-search");
     mobileMenuIcon.style.visibility = "hidden";
+
+    searchInput.focus();
 
     // ? Add event listener for search bar clear button //
     searchBarClear.addEventListener("click", handleSearchBarClearClick);
