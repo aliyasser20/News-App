@@ -154,6 +154,7 @@ export function handleSearchBarSearchClick(e) {
   }
 
   searchBarInput.value = "";
+  searchBarInput.blur();
 }
 
 export function handleFooterButtonClick(e) {

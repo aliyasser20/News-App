@@ -241,6 +241,7 @@ export async function createSearchElement(
         currentPage: "1"
       });
     }
+    inputBar.blur();
   }
 
   const searchForm = searchPageElement.querySelector("form");
