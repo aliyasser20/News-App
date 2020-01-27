@@ -129,6 +129,8 @@ header {
 
 .search-bar-area {
   position: fixed;
+  top: 15px;
+  // transform: translateY(-60px);
   width: 100%;
   height: 60px;
   background-color: var(--greyish);
@@ -220,12 +222,13 @@ header {
 }
 
 .hide-search {
-  transform: translateY(-60px);
+  // transform: translateY(-60px);
   opacity: 0;
   transition: all 0.3s;
 }
 
 .display-search {
+  transform: translateY(60px);
   grid-template-columns: auto;
   opacity: 1;
   transition: all 0.3s;
