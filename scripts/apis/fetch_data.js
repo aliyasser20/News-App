@@ -18,8 +18,7 @@ const fromSelector = "from=";
 const toSelector = "to=";
 
 // ? Define api key //
-// const apiKey = "apiKey=5024963fa5464b67b100d3613c415c02";
-const apiKey = "apiKey=5dcf70b08e2a446f81e5d7694dd9bdcf";
+const apiKey = process.env.newsAppApiKey;
 
 // ? Define default parameters //
 const defaultLanguage = "en";

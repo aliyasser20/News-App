@@ -6,7 +6,7 @@ import { homePageReload } from "../core/page_reload";
 // ? Load packages and set api key //
 google.charts.load("current", {
   packages: ["geochart"],
-  mapsApiKey: "AIzaSyBKE0Ll1qhSU9lXciUhxbROrq7FXrIUFqw"
+  mapsApiKey: process.env.googleMapsApiKey
 });
 
 // //! Draw regions map function -------------------------------------------------------------------------------------------------- //
