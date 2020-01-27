@@ -251,6 +251,10 @@ export async function createSearchElement(
   searchForm.addEventListener("submit", handleSubmit);
 
   const clearButton = searchPageElement.querySelector(".search-bar-clear");
-  clearButton.addEventListener("click", () => (inputBar.value = ""));
+  clearButton.addEventListener("click", () => {
+    inputBar.focus();
+    inputBar.value = "";
+  });
+
   return searchPageElement;
 }

@@ -127,6 +127,7 @@ export function handleMenuButtonClick(e) {
 export function handleSearchBarClearClick(e) {
   e.preventDefault();
   searchBarInput.value = "";
+  searchBarInput.focus();
 }
 
 export function handleSearchBarSearchClick(e) {
