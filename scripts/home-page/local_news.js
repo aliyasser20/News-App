@@ -161,7 +161,7 @@ export async function createLocalNewsElement(localType, country) {
 
   // ? Handle toggle button click function //
   function handleCountryTogglerButtonClick(e) {
-    const nextMjaorElment = e.target.parentNode.nextElementSibling;
+    const nextMjaorElment = e.currentTarget.parentNode.nextElementSibling;
 
     if (nextMjaorElment.classList.contains("news")) {
       homePageReload("home", {
