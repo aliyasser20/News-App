@@ -26,7 +26,10 @@ export async function createLocalNewsElement(localType, country) {
 
   localHeaderElement.innerHTML += `
     <h2 class="following-title">Local News</h2>
-    <button class="local-country">${country}</button>
+    <button class="local-country">
+    <p>${country}</p>
+    <div class="arrow-down"></div>
+    </button>
     <div class="line"></div>
     <button class="see-all" ${hiddenOrNot}>See All</button>
   `;

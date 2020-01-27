@@ -62,7 +62,12 @@ export async function createTopNewsElement(currentSource) {
       sourceOption.id !== "the-huffington-post" &&
       sourceOption.id !== "the-jerusalem-post" &&
       sourceOption.id !== "the-lad-bible" &&
-      sourceOption.id !== "the-sport-bible"
+      sourceOption.id !== "the-sport-bible" &&
+      sourceOption.id !== "the-wall-street-journal" &&
+      sourceOption.id !== "the-washington-post" &&
+      sourceOption.id !== "the-washington-times" &&
+      sourceOption.id !== "entertainment-weekly" &&
+      sourceOption.id !== "breitbart-news"
     ) {
       sourceOptionsString += `<button class="source-option">${sourceOption.name}</button>
       `;
@@ -79,7 +84,10 @@ export async function createTopNewsElement(currentSource) {
     <span class="section-header">
     <h2 class="title">Top News</h2>
     <div class="line"></div>
-    <button class="sources">${currentSourceName}</button>
+    <button class="sources">
+      <p>${currentSourceName}</p>
+      <div class="arrow-down"></div>
+    </button>
     <div class="modal-outer" hidden></div>
     <div class="shadow source-menu-hidden source-menu">
       <p class="request">Please select a source:</p>
