@@ -1,5 +1,9 @@
-import { homePageReload } from "./page_reload";
-import { ageCalc, maxCharactersApply, imageAvailability } from "./utility";
+import { homePageReload } from "../core/page_reload";
+import {
+  ageCalc,
+  maxCharactersApply,
+  imageAvailability
+} from "../utilities/utility";
 
 export async function handleWidthChange() {
   const width = window.innerWidth || document.body.clientWidth;

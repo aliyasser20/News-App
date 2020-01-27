@@ -5,12 +5,12 @@ import {
   mobileMenuIcon,
   searchBarClear,
   searchBarSearch
-} from "./element_selectors";
+} from "../core/element_selectors";
 
 import {
   handleSearchBarClearClick,
   handleSearchBarSearchClick
-} from "./handlers";
+} from "../core/handlers";
 
 // ! Toggle search bar display function ------------------------------------------------------------------------------ //
 export function toggleSearchDisplay(forced) {

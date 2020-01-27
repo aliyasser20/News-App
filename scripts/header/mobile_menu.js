@@ -3,7 +3,7 @@ import {
   mobileMenuArea,
   mobileMenuIcon,
   searchIcon
-} from "./element_selectors";
+} from "../core/element_selectors";
 
 // ! Toggle mobile menu bar display function ------------------------------------------------------------------------- //
 export function toggleMobileMenuDisplay(forced) {

@@ -1,6 +1,6 @@
 // ? Imports //
-import { toggleSearchDisplay } from "./search_menu_bar";
-import { toggleMobileMenuDisplay } from "./mobile_menu";
+import { toggleSearchDisplay } from "../header/search_menu_bar";
+import { toggleMobileMenuDisplay } from "../header/mobile_menu";
 import { searchBarInput, searchIcon } from "./element_selectors";
 import { homePageReload } from "./page_reload";
 

@@ -1,8 +1,12 @@
 // ? Imports //
-import { ageCalc, maxCharactersApply, imageAvailability } from "./utility";
-import { countriesArray } from "./country_code";
-import { fetchNews } from "./fetch_data";
-import { addNewsToLocalStorage } from "./local_storage";
+import {
+  ageCalc,
+  maxCharactersApply,
+  imageAvailability
+} from "../utilities/utility";
+import { countriesArray } from "../utilities/country_code";
+import { fetchNews } from "../apis/fetch_data";
+import { addNewsToLocalStorage } from "../session-storage/local_storage";
 // ? End of Imports //
 
 export async function createCategoryElement(

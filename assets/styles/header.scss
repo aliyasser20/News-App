@@ -39,25 +39,25 @@ header {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      background: url(../assets/magnifier@2x.png) no-repeat;
+      background: url(../images/magnifier@2x.png) no-repeat;
       background-position: 100% 50%;
       background-size: 18px;
     }
 
     .search-icon:hover, .clicked {
-      background: url(../assets/magnifier-hover@2x.png) no-repeat;
+      background: url(../images/magnifier-hover@2x.png) no-repeat;
       background-position: 100% 50%;
       background-size: 18px;
     }
     
     .mobile-menu-icon {
-      background: url(../assets/menue-white@2x.png) no-repeat;
+      background: url(../images/menue-white@2x.png) no-repeat;
       background-size: 30px;
       background-position: 0% 50%;
     }
 
     .mobile-menu-icon:hover, .menu-clicked {
-      background: url(../assets/menue-yellow@2x.png) no-repeat;
+      background: url(../images/menue-yellow@2x.png) no-repeat;
       background-size: 30px;
       background-position: 0% 50%;
     }
@@ -163,7 +163,7 @@ header {
     }
     
     .search-bar-icon {
-      background: url(../assets/magnifier_black@2x.png) no-repeat ;
+      background: url(../images/magnifier_black@2x.png) no-repeat ;
       background-position: 60% 50%;
       background-size: 16px;
       width: 100%;

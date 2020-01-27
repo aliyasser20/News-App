@@ -1,6 +1,6 @@
 // ? Imports //
-import { countriesArray } from "./country_code";
-import { homePageReload } from "./page_reload";
+import { countriesArray } from "../utilities/country_code";
+import { homePageReload } from "../core/page_reload";
 // ? End of Imports //
 
 // ? Load packages and set api key //

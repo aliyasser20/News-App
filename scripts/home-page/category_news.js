@@ -1,7 +1,11 @@
 // ? Imports //
-import { ageCalc, maxCharactersApply, imageAvailability } from "./utility";
-import { homePageReload } from "./page_reload";
-import { toggleSearchDisplay } from "./search_menu_bar";
+import {
+  ageCalc,
+  maxCharactersApply,
+  imageAvailability
+} from "../utilities/utility";
+import { homePageReload } from "../core/page_reload";
+import { toggleSearchDisplay } from "../header/search_menu_bar";
 // ? End of Imports //
 
 async function createEachCategoryElement(category) {

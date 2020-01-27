@@ -5,15 +5,15 @@ import {
   logoButton,
   menuButtons,
   footerButtons
-} from "./element_selectors";
+} from "./core/element_selectors";
 import {
   handleSearchIconClick,
   handleMobileMenuIconClick,
   handleLogoHomeButtonClick,
   handleMenuButtonClick,
   handleFooterButtonClick
-} from "./handlers";
-import { homePageReload } from "./page_reload";
+} from "./core/handlers";
+import { homePageReload } from "./core/page_reload";
 // ? End of Imports //
 
 // ? Add event listener for search icon click //

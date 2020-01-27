@@ -1,9 +1,12 @@
 // ? Imports //
-import { ageCalc, maxCharactersApply, imageAvailability } from "./utility";
-import { fetchNews } from "./fetch_data";
-import { addNewsToLocalStorage } from "./local_storage";
-import { homePageReload } from "./page_reload";
-import { toggleSearchDisplay } from "./search_menu_bar";
+import {
+  ageCalc,
+  maxCharactersApply,
+  imageAvailability
+} from "../utilities/utility";
+import { fetchNews } from "../apis/fetch_data";
+import { addNewsToLocalStorage } from "../session-storage/local_storage";
+import { homePageReload } from "../core/page_reload";
 
 // ? End of Imports //
 

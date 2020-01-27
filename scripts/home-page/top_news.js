@@ -1,6 +1,10 @@
 // ? Imports //
-import { ageCalc, maxCharactersApply, imageAvailability } from "./utility";
-import { homePageReload } from "./page_reload";
+import {
+  ageCalc,
+  maxCharactersApply,
+  imageAvailability
+} from "../utilities/utility";
+import { homePageReload } from "../core/page_reload";
 import { handleWidthChange } from "./slides";
 // ? End of Imports //
 

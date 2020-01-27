@@ -1,7 +1,7 @@
 // ? Imports //
-import { createHomeElement } from "./home";
-import { createSearchElement } from "./search";
-import { createCategoryElement } from "./category";
+import { createHomeElement } from "../home-page/home";
+import { createSearchElement } from "../search-page/search";
+import { createCategoryElement } from "../category-page/category";
 // ? End of Imports //
 
 export async function createMainElement(page, details) {

@@ -1,14 +1,14 @@
 // ? Imports //
-import { fetchNews, fetchSources } from "./fetch_data";
+import { fetchNews, fetchSources } from "../apis/fetch_data";
 import {
   addNewsToLocalStorage,
   addSourceOptionsToLocalStorage
-} from "./local_storage";
+} from "../session-storage/local_storage";
 import { createMainElement } from "./main";
 import { workingArea, cssLoaderElement } from "./element_selectors";
-import { drawMap } from "./google_maps_api";
-import { countriesArray } from "./country_code";
-import { wait } from "./utility";
+import { drawMap } from "../apis/google_maps_api";
+import { countriesArray } from "../utilities/country_code";
+import { wait } from "../utilities/utility";
 
 // ? End of Imports //
 
