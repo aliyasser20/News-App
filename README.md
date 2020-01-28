@@ -13,7 +13,7 @@ The app makes use of two APIs: [**News API**](https://newsapi.org/) & [**Google 
 
 Here is a preview of the app's main sections:
 
-![actual screenshots](./assets/readme-images/actual-screenshots.png)
+![actual screenshots](./assets/readme-images/actual-screenshots-dark-yellow.png)
 
 <!-- **Header and top news section on home page:**
 
