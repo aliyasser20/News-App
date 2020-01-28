@@ -9,11 +9,13 @@ This SPA presents categorized news from 30+ sources and directs user to the orig
 
 The app makes use of two APIs: [**News API**](https://newsapi.org/) & [**Google GeoChart**](https://developers.google.com/chart/interactive/docs/gallery/geochart). This document should show how the app was roughly created and deployed.
 
-##App Preview
+## App Preview
 
-Here is a preview of the app's main sections.
+Here is a preview of the app's main sections:
 
-**Header and top news section on home page:**
+![actual screenshots](./assets/readme-images/Actual&#32;Screenshots.png)
+
+<!-- **Header and top news section on home page:**
 
 ![top-news](./assets/readme-images/top-news-actual.png)
 
@@ -33,7 +35,7 @@ Here is a preview of the app's main sections.
 
 **Footer:**
 
-![footer](./assets/readme-images/footer-actual.png)
+![footer](./assets/readme-images/footer-actual.png) -->
 
 ## Pre-Development (UI Design)
 
