@@ -18,7 +18,7 @@ const fromSelector = "from=";
 const toSelector = "to=";
 
 // ? Define api key //
-const apiKey = process.env.newsAppApiKey;
+const apiKey = `apiKey=${process.env.newsAppApiKey}`;
 
 // ? Define default parameters //
 const defaultLanguage = "en";
