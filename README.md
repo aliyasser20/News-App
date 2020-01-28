@@ -3,9 +3,7 @@
 [1]: ./assets/readme-images/full-logo.png
 [2]: https://newsapp-as.netlify.com/
 
-Hi! This is a simple news aggregator single-page application deployed on [**Netlify**](https://www.netlify.com/). This is my first web app.
-
-This SPA presents categorized news from 30+ sources and directs user to the original article on the source's website. 
+Hi! This is a simple news aggregator single-page application deployed on [**Netlify**](https://www.netlify.com/). This is my first web app. This SPA presents categorized news from 30+ sources and directs user to the original article on the source's website. 
 
 The app makes use of two APIs: [**News API**](https://newsapi.org/) & [**Google GeoChart**](https://developers.google.com/chart/interactive/docs/gallery/geochart). This document should show how the app was roughly created and deployed.
 
@@ -45,7 +43,7 @@ Both types of requests were used in the app along with different filters and sor
 
 ### Google GeoChart
 
-This API is provided by google and allows for data visualization in a map view. In this app, the map was used to select desired region for the local news section and page. 
+This API is provided by [**Google**](https://developers.google.com/) and allows for data visualization in a map view. In this app, the map was used to select desired region for the local news section and page. 
 
 ## Page Load & Session Storage
 
