@@ -139,7 +139,6 @@ The **publish directory** is ```dist```.
 
 API keys are set up on Netlify as environment variables.
 
-
 ## Run Locally
 
 1. Clone git repository
