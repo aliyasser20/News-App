@@ -19,26 +19,29 @@ The app makes use of two APIs: [**News API**](https://newsapi.org/) & [**Google 
 
 ## App Preview
 
-##### Home Page
+#### Home Page
 
 ![home-page](./assets/readme-images/home-page.gif)
 
-##### Top News
+---
+#### Top News
 
 ![top-news-slider](./assets/readme-images/top-news-slider.gif)
 
 ![top-news-source](./assets/readme-images/top-news-source.gif)
 
-##### Local News
+---
+#### Local News
 
 ![map](./assets/readme-images/map.gif)
 
-##### Search
+---
+#### Search
 
 ![search](./assets/readme-images/search.gif)
 
 ---
-##### Mobile
+#### Mobile
 
 ![mobile-versions](./assets/readme-images/mobile-versions.png)
 
