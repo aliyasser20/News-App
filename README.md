@@ -21,7 +21,7 @@ The app makes use of two APIs: [**News API**](https://newsapi.org/) & [**Google 
 
 Here is a preview of the app's main sections:
 
-![home-page-scroll](assets/readme-images/home-page-scroll.gif)
+![home-page-scroll](assets/readme-images/home-page-scroll-3.gif)
 
 ![actual screenshots](./assets/readme-images/actual-screenshots-dark-yellow.png)
 
