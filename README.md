@@ -31,6 +31,7 @@ Here is a preview of the app's main sections:
 
 ![search](./assets/readme-images/search.gif)
 
+![mobile-versions](./assets/readme-images/mobile-versions.png)
 
 ## Pre-Development (UI Design)
 
