@@ -3,7 +3,7 @@
 [1]: ./assets/readme-images/full-logo.png
 [2]: https://newsapp-as.netlify.com/
 
-Hi! This is a simple news aggregator single-page application deployed on [**Netlify**](https://www.netlify.com/). This is my first web app. This SPA presents categorized news from 30+ sources and directs user to the original article on the source's website. 
+Hi! This is a simple news aggregator single-page application deployed on [**Netlify**](https://newsapp-as.netlify.com/). This is my first web app. This SPA presents categorized news from 30+ sources and directs user to the original article on the source's website. 
 
 The app makes use of two APIs: [**News API**](https://newsapi.org/) & [**Google GeoChart**](https://developers.google.com/chart/interactive/docs/gallery/geochart). This document should show how the app was roughly created and deployed.
 
@@ -23,7 +23,14 @@ Here is a preview of the app's main sections:
 
 ![home-page](./assets/readme-images/home-page.gif)
 
-![actual screenshots](./assets/readme-images/actual-screenshots-dark-yellow.png)
+![top-news-slider](./assets/readme-images/top-news-slider.gif)
+
+![top-news-source](./assets/readme-images/top-news-source.gif)
+
+![map](./assets/readme-images/map.gif)
+
+![search](./assets/readme-images/search.gif)
+
 
 ## Pre-Development (UI Design)
 
@@ -105,7 +112,7 @@ export async function createHomeElement(details) {
 
 ## Deployment 
 
-This app is deployed on [**Netlify**](https://www.netlify.com/). The deployed version is connected to the github repository. Any pushed updates on the master branch automatically trigger a rebuild on the netlify server. 
+This app is deployed on [**Netlify**](https://newsapp-as.netlify.com/). The deployed version is connected to the github repository. Any pushed updates on the master branch automatically trigger a rebuild on the netlify server. 
 
 A **package.json** file has been set up with all the dependencies needed for this app:
 
